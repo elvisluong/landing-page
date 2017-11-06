@@ -1,0 +1,17 @@
+function malert(text, timeout){
+    var t = timeout || 5000;
+    var style1 = "position: fixed; top: 0px; width: 100%; z-index: 1000;";
+    var style2 = "text-align:center;cursor:pointer;background-color: #F5F7BC;width: 300px; margin: 0 auto; padding: 10px; border-radius: 0px 0px 7px 7px; opacity: 0.98;  display: none; cursir: pointer; box-shadow: 0px 2px 5px #B8B8B8;";
+    
+    $('body').append('<div class="malert" style="'+style1+'"><div style="'+style2+'">'+text+'</div></div>');
+    $('.malert div').slideDown('fast');
+    var a = $('.malert div').click(function(){
+        $('.malert div').slideUp('fast', function(){
+            $('.malert').remove();
+        });
+    });
+    
+    setTimeout( function(){
+        a.click();
+    }, 5000);
+}

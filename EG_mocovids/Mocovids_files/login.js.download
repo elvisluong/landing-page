@@ -1,0 +1,2013 @@
+angular.module('movie-portal', ['ngRoute', 'ngMaterial', 'ngMask'])
+.run(function($rootScope, $location) {
+    $rootScope.loadFinish= false;
+    $rootScope.nopadding = false;
+    $rootScope.nohead = false;
+    $rootScope.nofooter = false;
+    $rootScope.nback = false;
+    $rootScope.canJoin = false;
+    $rootScope.showModal = false;
+    $rootScope.authMode = authMode;
+    $rootScope.mainMenu = 'hide';
+    $rootScope.homepage = false;
+
+    $rootScope.activeSlide=0;
+    $rootScope.sliderNext = function(){
+        $rootScope.activeSlide = sliderNext($rootScope.activeSlide, $rootScope.slides.length);
+    };
+    $rootScope.sliderPrev = function(){
+        $rootScope.activeSlide = sliderPrev($rootScope.activeSlide, $rootScope.slides.length);
+    };
+    $rootScope.setActiveSlide = function(key){
+        $rootScope.activeSlide = key;
+    };
+    
+    $rootScope.$on('$viewContentLoaАded', function(){
+        if( typeof(ga) !== 'undefined' )
+        {
+            ga('send', 'pageview', { page: $location.url() });
+        }
+
+        if( typeof(fbq) !== 'undefined' )
+        {
+            fbq('track', "PageView", {content_name: $location.url()});
+        }
+    });
+    
+    $rootScope.redirect = function(url){
+        var url = url;
+        location.href = url;
+    };
+    
+    if( LANG === 'en' )
+    {
+        $rootScope.showCompleteButton = true;
+    }
+    else if(LANG === 'eg' || LANG === 'kw')
+    {
+        $('body').addClass('rtl');
+        if(LANG === 'eg')
+        {
+            $rootScope.nofooter = true;
+        }
+    }
+})
+.config(function($routeProvider, $locationProvider, $mdThemingProvider) {
+    $mdThemingProvider.theme("default")
+      .primaryColor("orange")
+      .accentColor("grey");
+      
+    console.log($mdThemingProvider);
+    $routeProvider
+        .when('/', {
+          controller:'Main',
+          templateUrl: function() {
+              if( LANG === 'th' || LANG === 'es' )
+              {
+                  //return '/html/index_' + LANG + '.html';
+              }
+              return '/html/index.html';
+          }
+        })
+        // == flow
+        .when('/flow2', {
+          controller:'Flow2',
+          templateUrl:'/html/flow/fun1.html'
+        })
+
+        .when('/flow3', {
+          controller:'Flow2',
+          templateUrl:'/html/flow/fun2.html'
+        })
+
+        .when('/flow4', {
+          controller:'Flow2',
+          templateUrl:'/html/flow/fun3.html'
+        })
+
+        .when('/flow5', {
+          controller:'Flow2',
+          templateUrl:'/html/flow/cute.html'
+        })
+
+        .when('/flow6', {
+          controller:'Flow2',
+          templateUrl:'/html/flow/pockemon1.html'
+        })
+
+        .when('/flow7', {
+          controller:'Flow2',
+          templateUrl:'/html/flow/pockemon2.html'
+        })
+        
+        .when('/flow8-en', {
+          controller:'Flow2',
+          templateUrl:'/html/flow/en/flow.html'
+        })
+        
+        .when('/flow9-en', {
+          controller:'Flow2',
+          templateUrl:'/html/flow/en/flow.html'
+        })
+
+        .when('/flow10-en', {
+          controller:'Flow2',
+          templateUrl:'/html/flow/en/flow.html'
+        })
+        
+        .when('/flow11-en', {
+          controller:'Flow2',
+          templateUrl:'/html/flow/en/flow.html'
+        })
+        
+        .when('/flow12-en', {
+          controller:'Flow2',
+          templateUrl:'/html/flow/en/flow.html'
+        })
+        
+        .when('/flow13-en', {
+          controller:'Flow2',
+          templateUrl:'/html/flow/en/flow.html'
+        })
+        
+        .when('/flow14-en', {
+          controller:'Flow2',
+          templateUrl:'/html/flow/en/flow.html'
+        })
+        
+        .when('/flow15-en', {
+          controller:'Flow2',
+          templateUrl:'/html/flow/en/flow.html'
+        })
+        
+        .when('/flow16-en', {
+          controller:'Flow2',
+          templateUrl:'/html/flow/en/flow.html'
+        });
+
+        if( LANG === 'eg' )
+        {
+            $routeProvider
+            .when('/mvrnhi', {
+              controller:'Flow2',
+              templateUrl:'/html/flow/eg/mocovids_flow.html'
+            })
+            .when('/mvrnhi2', {
+              controller:'Flow2',
+              templateUrl:'/html/flow/eg/mocovids_flow.html'
+            })
+            .when('/mvrnhi3', {
+              controller:'Flow2',
+              templateUrl:'/html/flow/eg/mocovids_flow.html'
+            })
+            .when('/mvrnhi4', {
+              controller:'Flow2',
+              templateUrl:'/html/flow/eg/mocovids_flow.html'
+            })
+            .when('/mvrnhi5', {
+              controller:'Flow2',
+              templateUrl:'/html/flow/eg/mocovids_flow.html'
+            })
+            .when('/mvrnhi6', {
+              controller:'Flow2',
+              templateUrl:'/html/flow/eg/mocovids_flow.html'
+            })
+            .when('/mvrnhi7', {
+              controller:'Flow2',
+              templateUrl:'/html/flow/eg/mocovids_flow.html'
+            })
+            .when('/mvrnhi8', {
+              controller:'Flow2',
+              templateUrl:'/html/flow/eg/mocovids_flow.html'
+            })
+            .when('/mvrnhi9', {
+              controller:'Flow2',
+              templateUrl:'/html/flow/eg/mocovids_flow.html'
+            })
+            .when('/mvrnhi10', {
+              controller:'Flow2',
+              templateUrl:'/html/flow/eg/mocovids_flow.html'
+            })
+            .when('/mvrnhi11', {
+              controller:'Flow2',
+              templateUrl:'/html/flow/eg/mocovids_flow.html'
+            })
+            .when('/mvrnhi12', {
+              controller:'Flow2',
+              templateUrl:'/html/flow/eg/mocovids_flow.html'
+            })
+            .when('/mvrnhi13', {
+              controller:'Flow2',
+              templateUrl:'/html/flow/eg/mocovids_flow.html'
+            })
+            .when('/mvrnhi14', {
+              controller:'Flow2',
+              templateUrl:'/html/flow/eg/mocovids_flow.html'
+            })
+            .when('/mvrnhi15', {
+              controller:'Flow2',
+              templateUrl:'/html/flow/eg/mocovids_flow.html'
+            })
+            .when('/mvrnhi16', {
+              controller:'Flow2',
+              templateUrl:'/html/flow/eg/mocovids_flow.html'
+            })
+            .when('/mvrnhi17', {
+              controller:'Flow2',
+              templateUrl:'/html/flow/eg/mocovids_flow.html'
+            })
+            .when('/mvrnhi18', {
+              controller:'Flow2',
+              templateUrl:'/html/flow/eg/mocovids_flow.html'
+            })
+            .when('/mvrnhi19', {
+              controller:'Flow2',
+              templateUrl:'/html/flow/eg/mocovids_flow.html'
+            })
+            .when('/mvrnhi20', {
+              controller:'Flow2',
+              templateUrl:'/html/flow/eg/mocovids_flow.html'
+            })
+            .when('/mvrnhi21', {
+              controller:'Flow2',
+              templateUrl:'/html/flow/eg/mocovids_flow.html'
+            })
+            .when('/mvrnhi22', {
+              controller:'Flow2',
+              templateUrl:'/html/flow/eg/mocovids_flow.html'
+            })
+            .when('/mvrnhi23', {
+              controller:'Flow2',
+              templateUrl:'/html/flow/eg/mocovids_flow.html'
+            })
+            .when('/mvrnhi24', {
+              controller:'Flow2',
+              templateUrl:'/html/flow/eg/mocovids_flow.html'
+            })
+            .when('/mvrnhi25', {
+              controller:'Flow2',
+              templateUrl:'/html/flow/eg/mocovids_flow.html'
+            })
+            .when('/mvrnhi26', {
+              controller:'Flow2',
+              templateUrl:'/html/flow/eg/mocovids_flow.html'
+            })
+            .when('/mvrnhi27', {
+              controller:'Flow2',
+              templateUrl:'/html/flow/eg/mocovids_flow.html'
+            })
+            .when('/mvrnhi28', {
+              controller:'Flow2',
+              templateUrl:'/html/flow/eg/mocovids_flow.html'
+            })
+            .when('/mvrnhi29', {
+              controller:'Flow2',
+              templateUrl:'/html/flow/eg/mocovids_flow.html'
+            })
+            .when('/mvrnhi30', {
+              controller:'Flow2',
+              templateUrl:'/html/flow/eg/mocovids_flow.html'
+            })
+            .when('/mvrnhi31', {
+              controller:'Flow2',
+              templateUrl:'/html/flow/eg/mocovids_flow.html'
+            })
+            .when('/mvrnhi32', {
+              controller:'Flow2',
+              templateUrl:'/html/flow/eg/mocovids_flow.html'
+            })
+            .when('/mvrnhi33', {
+              controller:'Flow2',
+              templateUrl:'/html/flow/eg/mocovids_flow.html'
+            })
+            .when('/mvrnhi34', {
+              controller:'Flow2',
+              templateUrl:'/html/flow/eg/mocovids_flow.html'
+            })
+            .when('/mvrnhi35', {
+              controller:'Flow2',
+              templateUrl:'/html/flow/eg/mocovids_flow.html'
+            })
+            .when('/mvrnhi36', {
+              controller:'Flow2',
+              templateUrl:'/html/flow/eg/mocovids_flow.html'
+            })
+            .when('/mvrnhi37', {
+              controller:'Flow2',
+              templateUrl:'/html/flow/eg/mocovids_flow.html'
+            })
+            .when('/mvrnhi38', {
+              controller:'Flow2',
+              templateUrl:'/html/flow/eg/mocovids_flow.html'
+            })
+            .when('/mvrnhi39', {
+              controller:'Flow2',
+              templateUrl:'/html/flow/eg/mocovids_flow.html'
+            })
+            .when('/mvrnhi40', {
+              controller:'Flow2',
+              templateUrl:'/html/flow/eg/mocovids_flow.html'
+            })
+            .when('/mvrnhi41', {
+              controller:'Flow2',
+              templateUrl:'/html/flow/eg/mocovids_flow.html'
+            })
+            .when('/mvrnhi42', {
+              controller:'Flow2',
+              templateUrl:'/html/flow/eg/mocovids_flow.html'
+            })
+            .when('/mvrnhi43', {
+              controller:'Flow2',
+              templateUrl:'/html/flow/eg/mocovids_flow.html'
+            })
+            .when('/mvrnhi45', {
+              controller:'Flow2',
+              templateUrl:'/html/flow/eg/mocovids_flow.html'
+            })
+            .when('/flow1-eg', {
+              controller:'Flow2',
+              templateUrl:'/html/flow/eg/flow1click.html'
+            })
+            .when('/flow2-eg', {
+              controller:'Flow2',
+              templateUrl:'/html/flow/eg/flow1click.html'
+            })
+            .when('/flow3-eg', {
+              controller:'Flow2',
+              templateUrl:'/html/flow/eg/flow.html'
+            })
+            .when('/flow4-eg', {
+              controller:'Flow2',
+              templateUrl:'/html/flow/eg/flow.html'
+            })
+            .when('/flow5-eg', {
+              controller:'Flow2',
+              templateUrl:'/html/flow/eg/flow.html'
+            })
+            .when('/flow6-eg', {
+              controller:'Flow2',
+              templateUrl:'/html/flow/eg/flow.html'
+            })
+            .when('/flow7-eg', {
+              controller:'Flow2',
+              templateUrl:'/html/flow/eg/flow.html'
+            })
+            .when('/flow8-eg', {
+              controller:'Flow2',
+              templateUrl:'/html/flow/eg/flow.html'
+            })
+            .when('/flow9-eg', {
+              controller:'Flow2',
+              templateUrl:'/html/flow/eg/flow.html'
+            })
+            .when('/flow10-eg', {
+              controller:'Flow2',
+              templateUrl:'/html/flow/eg/flow.html'
+            })
+            .when('/flow11-eg', {
+              controller:'Flow2',
+              templateUrl:'/html/flow/eg/flow.html'
+            })
+            .when('/flow12-eg', {
+              controller:'Flow2',
+              templateUrl:'/html/flow/eg/flow.html'
+            })
+            .when('/flow13-eg', {
+              controller:'Flow2',
+              templateUrl:'/html/flow/eg/flow.html'
+            })
+            .when('/flow14-eg', {
+              controller:'Flow2',
+              templateUrl:'/html/flow/eg/flow.html'
+            })
+            .when('/flow15-eg', {
+              controller:'Flow2',
+              templateUrl:'/html/flow/eg/flow.html'
+            })
+            .when('/flow16-eg', {
+              controller:'Flow2',
+              templateUrl:'/html/flow/eg/flow.html'
+            })
+            .when('/flow17-eg', {
+              controller:'Flow2',
+              templateUrl:'/html/flow/eg/flow.html'
+            })
+            .when('/flow18-eg', {
+              controller:'Flow2',
+              templateUrl:'/html/flow/eg/flow.html'
+            })
+            .when('/flow19-eg', {
+              controller:'Flow2',
+              templateUrl:'/html/flow/eg/flow.html'
+            })
+            .when('/flow20-eg', {
+              controller:'Flow2',
+              templateUrl:'/html/flow/eg/flow.html'
+            })
+            .when('/flow21-eg', {
+              controller:'Flow2',
+              templateUrl:'/html/flow/eg/flow.html'
+            })
+            .when('/flow22-eg', {
+              controller:'Flow2',
+              templateUrl:'/html/flow/eg/flow.html'
+            })
+            .when('/flow23-eg', {
+              controller:'Flow2',
+              templateUrl:'/html/flow/eg/flow.html'
+            })
+            .when('/flow24-eg', {
+              controller:'Flow2',
+              templateUrl:'/html/flow/eg/flow.html'
+            })
+            .when('/flow25-eg', {
+              controller:'Flow2',
+              templateUrl:'/html/flow/eg/flow.html'
+            })
+            .when('/flow26-eg', {
+              controller:'Flow2',
+              templateUrl:'/html/flow/eg/flow.html'
+            })
+            .when('/flow27-eg', {
+              controller:'Flow2',
+              templateUrl:'/html/flow/eg/flow.html'
+            })
+            .when('/flow28-eg', {
+              controller:'Flow2',
+              templateUrl:'/html/flow/eg/flow.html'
+            })
+            .when('/flow29-eg', {
+              controller:'Flow2',
+              templateUrl:'/html/flow/eg/flow.html'
+            })
+            .when('/flow30-eg', {
+              controller:'Flow2',
+              templateUrl:'/html/flow/eg/flow.html'
+            })
+            .when('/flow31-eg', {
+              controller:'Flow2',
+              templateUrl:'/html/flow/eg/flow.html'
+            })
+            .when('/flow32-eg', {
+              controller:'Flow2',
+              templateUrl:'/html/flow/eg/flow.html'
+            })
+            .when('/flow33-eg', {
+              controller:'Flow2',
+              templateUrl:'/html/flow/eg/flow.html'
+            })
+            .when('/flow34-eg', {
+              controller:'Flow2',
+              templateUrl:'/html/flow/eg/flow.html'
+            })
+            .when('/flow35-eg', {
+              controller:'Flow2',
+              templateUrl:'/html/flow/eg/flow.html'
+            })
+            .when('/flow36-eg', {
+              controller:'Flow2',
+              templateUrl:'/html/flow/eg/flow.html'
+            })
+            .when('/flow37-eg', {
+              controller:'Flow2',
+              templateUrl:'/html/flow/eg/flow.html'
+            })
+            .when('/flow38-eg', {
+              controller:'Flow2',
+              templateUrl:'/html/flow/eg/flow.html'
+            })
+            .when('/flow39-eg', {
+              controller:'Flow2',
+              templateUrl:'/html/flow/eg/flow.html'
+            })
+            .when('/flow40-eg', {
+              controller:'Flow2',
+              templateUrl:'/html/flow/eg/flow.html'
+            })
+            .when('/flow41-eg', {
+              controller:'Flow2',
+              templateUrl:'/html/flow/eg/flow.html'
+            })
+            .when('/flow42-eg', {
+              controller:'Flow2',
+              templateUrl:'/html/flow/eg/flow.html'
+            })
+            .when('/flow43-eg', {
+              controller:'Flow2',
+              templateUrl:'/html/flow/eg/flow.html'
+            })
+            .when('/flow44-eg', {
+              controller:'Flow2',
+              templateUrl:'/html/flow/eg/flow.html'
+            })
+            .when('/flow45-eg', {
+              controller:'Flow2',
+              templateUrl:'/html/flow/eg/flow.html'
+            })
+            .when('/flow46-eg', {
+              controller:'Flow2',
+              templateUrl:'/html/flow/eg/flow.html'
+            })
+            .when('/flow47-eg', {
+              controller:'Flow2',
+              templateUrl:'/html/flow/eg/flow.html'
+            })
+            .when('/flow48-eg', {
+              controller:'Flow2',
+              templateUrl:'/html/flow/eg/flow.html'
+            })
+            .when('/flow49-eg', {
+              controller:'Flow2',
+              templateUrl:'/html/flow/eg/flow.html'
+            })
+            .when('/flow50-eg', {
+              controller:'Flow2',
+              templateUrl:'/html/flow/eg/flow.html'
+            })
+            .when('/flow51-eg', {
+              controller:'Flow2',
+              templateUrl:'/html/flow/eg/flow.html'
+            })
+            .when('/flow52-eg', {
+              controller:'Flow2',
+              templateUrl:'/html/flow/eg/flow.html'
+            })
+            .when('/flow53-eg', {
+              controller:'Flow2',
+              templateUrl:'/html/flow/eg/flow.html'
+            })
+            .when('/flow54-eg', {
+              controller:'Flow2',
+              templateUrl:'/html/flow/eg/flow.html'
+            })
+            .when('/flow55-eg', {
+              controller:'Flow2',
+              templateUrl:'/html/flow/eg/flow.html'
+            })
+            .when('/flow56-eg', {
+              controller:'Flow2',
+              templateUrl:'/html/flow/eg/flow-play-btn.html'
+            })
+            .when('/flow57-eg', {
+              controller:'Flow2',
+              templateUrl:'/html/flow/eg/flow-play-btn.html'
+            })
+            .when('/flow58-eg', {
+              controller:'Flow2',
+              templateUrl:'/html/flow/eg/flow-play-btn.html'
+            })
+            .when('/flow59-eg', {
+              controller:'Flow2',
+              templateUrl:'/html/flow/eg/flow-play-btn.html'
+            })
+            .when('/flow60-eg', {
+              controller:'Flow2',
+              templateUrl:'/html/flow/eg/flow-play-btn.html'
+            })
+            .when('/flow61-eg', {
+              controller:'Flow2',
+              templateUrl:'/html/flow/eg/flow-play-btn.html'
+            })
+            .when('/flow62-eg', {
+              controller:'Flow2',
+              templateUrl:'/html/flow/eg/flow-play-btn.html'
+            })
+            .when('/flow63-eg', {
+              controller:'Flow2',
+              templateUrl:'/html/flow/eg/flow-play-btn.html'
+            })
+            .when('/flow64-eg', {
+              controller:'Flow2',
+              templateUrl:'/html/flow/eg/flow-play-btn.html'
+            })
+            .when('/flow65-eg', {
+              controller:'Flow2',
+              templateUrl:'/html/flow/eg/flow-play-btn.html'
+            })
+            .when('/flow66-eg', {
+              controller:'Flow2',
+              templateUrl:'/html/flow/eg/flow-play-btn.html'
+            })
+            .when('/flow67-eg', {
+              controller:'Flow2',
+              templateUrl:'/html/flow/eg/flow-play-btn.html'
+            })
+            .when('/flow68-eg', {
+              controller:'Flow2',
+              templateUrl:'/html/flow/eg/flow-play-btn.html'
+            })
+            .when('/flow69-eg', {
+              controller:'Flow2',
+              templateUrl:'/html/flow/eg/flow-play-btn.html'
+            })
+            .when('/flow70-eg', {
+              controller:'Flow2',
+              templateUrl:'/html/flow/eg/flow-play-btn.html'
+            })
+            .when('/flow71-eg', {
+              controller:'Flow2',
+              templateUrl:'/html/flow/eg/flow-play-btn.html'
+            })
+            .when('/flow72-eg', {
+              controller:'Flow2',
+              templateUrl:'/html/flow/eg/flow-play-btn.html'
+            })
+            .when('/flow73-eg', {
+              controller:'Flow2',
+              templateUrl:'/html/flow/eg/flow-play-btn.html'
+            })
+            .when('/flow74-eg', {
+              controller:'Flow2',
+              templateUrl:'/html/flow/eg/flow-play-btn.html'
+            })
+            .when('/flow75-eg', {
+              controller:'Flow2',
+              templateUrl:'/html/flow/eg/flow-play-btn.html'
+            })
+            .when('/flow76-eg', {
+              controller:'Flow2',
+              templateUrl:'/html/flow/eg/flow-play-btn.html'
+            })
+            .when('/flow77-eg', {
+              controller:'Flow2',
+              templateUrl:'/html/flow/eg/flow-play-btn.html'
+            })
+            .when('/flow78-eg', {
+              controller:'Flow2',
+              templateUrl:'/html/flow/eg/flow-play-btn.html'
+            })
+            .when('/flow79-eg', {
+              controller:'Flow2',
+              templateUrl:'/html/flow/eg/flow-play-btn.html'
+            })
+            .when('/flow80-eg', {
+              controller:'Flow2',
+              templateUrl:'/html/flow/eg/flow.html'
+            })
+            .when('/flow81-eg', {
+              controller:'Flow2',
+              templateUrl:'/html/flow/eg/flow.html'
+            })
+            .when('/flow82-eg', {
+              controller:'Flow2',
+              templateUrl:'/html/flow/eg/flow.html'
+            })
+            .when('/flow83-eg', {
+              controller:'Flow2',
+              templateUrl:'/html/flow/eg/flow.html'
+            })
+            .when('/flow84-eg', {
+              controller:'Flow2',
+              templateUrl:'/html/flow/eg/flow.html'
+            })
+            .when('/flow85-eg', {
+              controller:'Flow2',
+              templateUrl:'/html/flow/eg/flow_1_button.html'
+            })
+            .when('/flow86-eg', {
+              controller:'Flow2',
+              templateUrl:'/html/flow/eg/flow_1_button.html'
+            })
+            .when('/flow87-eg', {
+              controller:'Flow2',
+              templateUrl:'/html/flow/eg/flow_1_button.html'
+            })
+            
+            //new flows
+            .when('/flow1-eg-bg', {
+              controller:'Flow2',
+              templateUrl:'/html/flow/eg/flow_bg.html'
+            })
+            .when('/flow2-eg-bg', {
+              controller:'Flow2',
+              templateUrl:'/html/flow/eg/flow_bg.html'
+            })
+            .when('/flow3-eg-bg', {
+              controller:'Flow2',
+              templateUrl:'/html/flow/eg/flow_bg.html'
+            })
+            .when('/flow4-eg-bg', {
+              controller:'Flow2',
+              templateUrl:'/html/flow/eg/flow_bg.html'
+            })
+            .when('/flow5-eg-bg', {
+              controller:'Flow2',
+              templateUrl:'/html/flow/eg/flow_bg.html'
+            })
+            .when('/flow6-eg-bg', {
+              controller:'Flow2',
+              templateUrl:'/html/flow/eg/flow_bg.html'
+            })
+            .when('/flow7-eg-bg', {
+              controller:'Flow2',
+              templateUrl:'/html/flow/eg/flow_bg.html'
+            })
+            .when('/flow8-eg-bg', {
+              controller:'Flow2',
+              templateUrl:'/html/flow/eg/flow_bg.html'
+            })
+            .when('/flow9-eg-bg', {
+              controller:'Flow2',
+              templateUrl:'/html/flow/eg/flow_bg.html'
+            })
+            .when('/flow10-eg-bg', {
+              controller:'Flow2',
+              templateUrl:'/html/flow/eg/flow_bg.html'
+            })
+            .when('/flow11-eg-bg', {
+              controller:'Flow2',
+              templateUrl:'/html/flow/eg/flow_bg.html'
+            })
+            .when('/flow12-eg-bg', {
+              controller:'Flow2',
+              templateUrl:'/html/flow/eg/flow_bg.html'
+            })
+            .when('/flow13-eg-bg', {
+              controller:'Flow2',
+              templateUrl:'/html/flow/eg/flow_bg.html'
+            })
+            .when('/flow14-eg-bg', {
+              controller:'Flow2',
+              templateUrl:'/html/flow/eg/flow_bg.html'
+            })
+            .when('/flow15-eg-bg', {
+              controller:'Flow2',
+              templateUrl:'/html/flow/eg/flow_bg.html'
+            })
+            .when('/flow59-eg-new', {
+              controller:'Flow2',
+              templateUrl:'/html/flow/eg/flow-play-btn.html '
+            })
+            .when('/flow1-eg-sub', {
+              controller:'Flow2',
+              templateUrl:'/html/flow/eg/flow-subscribe-btn.html '
+            })
+            .when('/flow2-eg-sub', {
+              controller:'Flow2',
+              templateUrl:'/html/flow/eg/flow-subscribe-btn.html '
+            })
+            .when('/flow3-eg-sub', {
+              controller:'Flow2',
+              templateUrl:'/html/flow/eg/flow-subscribe-btn.html '
+            })
+            .when('/flow4-eg-sub', {
+              controller:'Flow2',
+              templateUrl:'/html/flow/eg/flow-subscribe-btn.html '
+            })
+            .when('/flow5-eg-sub', {
+              controller:'Flow2',
+              templateUrl:'/html/flow/eg/flow-subscribe-btn.html '
+            })
+            .when('/flow6-eg-sub', {
+              controller:'Flow2',
+              templateUrl:'/html/flow/eg/flow-subscribe-btn.html '
+            });
+        };
+
+        // =/= flow 
+        $routeProvider
+        .when('/signup', {
+          controller:'SignUp',
+          templateUrl:'/html/signup.html'
+        })
+        .when('/signin', {
+          controller:'Login',
+          templateUrl:'/html/login.html'
+        })
+        .when('/forgotPassword', {
+          controller:'forgotPassword1',
+          templateUrl:'/html/forgotPassword.html'
+        })
+        .when('/forgotPassword/:token', {
+          controller:'forgotPassword2',
+          templateUrl:'/html/forgotPassword.html'
+        })
+        .when('/page/:url', {
+          controller:'Page',
+          templateUrl:'/html/page.html'
+        })
+        .when('/close', {
+          controller:'Close',
+          templateUrl:'/html/close.html'
+        })
+        .when('/nouser', {
+          controller:'Text',
+          templateUrl:'/html/text.html'
+        })
+        .when('/blocked', {
+          controller:'Text',
+          templateUrl:'/html/text.html'
+        })
+
+        //new video routes
+        .when('/main', {
+          controller:'Text',
+          templateUrl:'/html/videoList.html'
+        })
+        .when('/settings', {
+          controller:'Text',
+          templateUrl:'/html/settings.html'
+        })
+        .when('/profile', {
+          controller:'Text',
+          templateUrl:'/html/profile.html'
+        })
+        .when('/video', {
+          controller:'Text',
+          templateUrl:'/html/video.html'
+        })
+        .when('/category', {
+          controller:'Text',
+          templateUrl:'/html/category.html'
+        })
+        .when('/privacy', {
+          controller:'Text',
+          templateUrl:'/html/privacy.html'
+        })
+        .when('/terms', {
+          controller:'Text',
+          templateUrl:'/html/terms.html'
+        })
+        .when('/search', {
+          controller:'Text',
+          templateUrl:'/html/search.html'
+        })
+        .when('/ucancel', {
+          controller:'Ucancel',
+          templateUrl:'/html/ucancel.html'
+        })
+        .otherwise({
+          controller:'NotFound',
+          templateUrl:'/html/404.html'
+        });
+        if( PGW === 'centili_v1_4' )
+        {
+            $routeProvider
+    //        .when('/', {
+    //            controller:'Main',
+    //            templateUrl:'/html/centili_v1_4/index_v1_4.html'
+    //        })
+            .when('/phone', {
+                controller:'Subscribe',
+                templateUrl:'/html/centili_v1_4/phone.html'
+            })
+            .when('/subscribe', {
+                controller:'Subscribe',
+                templateUrl:'/html/centili_v1_4/subscribe.html'
+            });
+        };
+    $locationProvider.html5Mode({
+        enabled: true,
+        requireBase: false
+    });
+})
+
+//Multilanguage
+.factory('$i18n', function(){
+    return function(key, params){
+        if( key.length > 0 )
+        {
+            var keys = key.split('.');
+            if( I18n[keys[0]] !== undefined )
+            {
+                var str = '';
+                if( keys.length > 1 )
+                {
+                    var temp = I18n[keys[0]];
+                    for( var i = 1; i < keys.length; i++)
+                    {
+                        if( typeof(temp[keys[i]]) !== 'undefined' )
+                        {
+                            temp = temp[keys[i]];
+                            continue;
+                        }
+                        break;
+                    }
+
+                    if( typeof(temp) === 'string' )
+                    {
+                        str = temp;
+                    }
+                }
+                else
+                {
+                    str = I18n[keys[0]];
+                }
+
+                if( str.length > 0 )
+                {
+                    if (params && params.length)
+                    {
+                        for (var i in params)
+                        {
+                            str = str.replace(':param'+i, params[i]);
+                        }
+                    }
+                    return str;
+                }
+            }
+            return key;
+        }
+        return false;
+    };
+})
+
+.directive('i18n', ['$rootScope', '$i18n', function ($rootScope, $i18n) {
+    return {
+        restrict : 'A',
+        scope : {
+            key : '=',
+            params : '=',
+            pl : '='
+        },
+        link: function (scope, element, attrs) {
+            if( attrs.pl ) //placehoder
+            {
+                element.attr('placeholder', $i18n(attrs.pl, attrs.params));
+            }
+            else if( attrs.key )
+            {
+                element.html($i18n(attrs.key, attrs.params));
+            }
+        }
+    };
+}])
+
+.controller('NotFound', ['$i18n', '$rootScope', function($i18n, $rootScope){
+    document.title = $i18n('titles.not_found');
+    $rootScope.nback = false;
+    $rootScope.loadFinish= true;
+}])
+
+.controller('Flow2', ['$i18n', '$rootScope', '$mdDialog', '$scope', '$location', '$http', '$sce', function($i18n, $rootScope, $mdDialog, $scope, $location, $http, $sce){
+    document.title = $i18n('titles.mocovids');
+    var url = $location.path().replace('/', '');
+    $rootScope.nohead = true;
+    $rootScope.nofooter = true;
+    $rootScope.loadFinish= true;
+    $scope.small_button = false;
+    var asIframe = false;
+    $scope.showAlert = function(ev) {
+        $mdDialog.show({
+          controller: 'FlowModalController',
+          templateUrl: '../html/modal/flow.html',
+          targetEvent: ev,
+          clickOutsideToClose:true,
+          fullscreen: $scope.customFullscreen
+        });
+      };
+      
+      if( url == 'flow8-en' )
+      {
+          $scope.flowImg = '/images/en/flow/flow8-en.gif';
+      }
+      else if( url == 'flow9-en' )
+      {
+          $scope.flowImg = '/images/en/flow/flow9-en.gif';
+      }
+      else if( url == 'flow10-en' )
+      {
+          $scope.flowImg = '/images/en/flow/flow10-en.gif';
+      }
+      else if( url == 'flow11-en' )
+      {
+          $scope.flowImg = '/images/en/flow/flow11-en.gif';
+      }
+      else if( url == 'flow12-en' )
+      {
+          $scope.flowImg = '/images/en/flow/flow12-en.gif';
+      }
+      else if( url == 'flow13-en' )
+      {
+          $scope.flowImg = '/images/en/flow/flow13-en.gif';
+      }
+      else if( url == 'flow14-en' )
+      {
+          $scope.flowImg = '/images/en/flow/flow14-en.gif';
+      }
+      else if( url == 'flow15-en' )
+      {
+          $scope.flowImg = '/images/en/flow/flow15-en.gif';
+      }
+      else if( url == 'flow16-en' )
+      {
+          $scope.flowImg = '/images/en/flow/flow16-en.gif';
+      };
+      
+      if( LANG === 'eg' ){
+        if( url == 'mvrnhi' )
+        {
+            $scope.small_button = true;
+            $scope.flowImg = '/images/eg/flow/flow5-eg.gif';
+        }
+        if( url == 'mvrnhi2' )
+        {
+            $scope.small_button = true;
+            $scope.flowImg = '/images/eg/flow/flow9-eg.gif';
+        }
+        if( url == 'mvrnhi3' )
+        {
+            $scope.small_button = true;
+            $scope.flowImg = '/images/eg/flow/flow13-eg.gif';
+        }
+        if( url == 'mvrnhi4' )
+        {
+            $scope.small_button = true;
+            $scope.flowImg = '/images/eg/flow/flow14-eg.gif';
+        }
+        if( url == 'mvrnhi5' )
+        {
+            $scope.small_button = true;
+            $scope.flowImg = '/images/eg/flow/flow15-eg.gif';
+        }
+        if( url == 'mvrnhi6' )
+        {
+            $scope.small_button = true;
+            $scope.flowImg = '/images/eg/flow/flow16-eg.gif';
+        }
+        if( url == 'mvrnhi7' )
+        {
+            $scope.small_button = true;
+            $scope.flowImg = '/images/eg/flow/flow17-eg.gif';
+        }
+        if( url == 'mvrnhi8' || url == 'flow18-eg' ){   
+            $scope.small_button = true;
+            $scope.flowImg = '/images/eg/flow/flow18-eg.gif';
+        }
+        else if( url == 'mvrnhi9' || url == 'flow19-eg' ){
+            $scope.small_button = true;
+            $scope.flowImg = '/images/eg/flow/flow19-eg.gif';
+        }
+        else if( url == 'mvrnhi10' || url == 'flow20-eg' ){
+            $scope.small_button = true;
+            $scope.flowImg = '/images/eg/flow/flow20-eg.gif';
+        }
+        else if( url == 'mvrnhi11' || url == 'flow21-eg' ){
+            $scope.small_button = true;
+            $scope.flowImg = '/images/eg/flow/flow21-eg.gif';
+        }
+        else if( url == 'mvrnhi12' || url == 'flow22-eg' ){
+            $scope.small_button = true;
+            $scope.flowImg = '/images/eg/flow/flow22-eg.gif';
+        }
+        else if( url == 'mvrnhi13' || url == 'flow23-eg' ){
+            $scope.small_button = true;
+            $scope.flowImg = '/images/eg/flow/flow23-eg.gif';
+        }
+        else if( url == 'mvrnhi14' || url == 'flow24-eg' ){
+            $scope.small_button = true;
+            $scope.flowImg = '/images/eg/flow/flow24-eg.gif';
+        }
+        else if( url == 'mvrnhi15' || url == 'flow25-eg' ){
+            $scope.small_button = true;
+            $scope.flowImg = '/images/eg/flow/flow25-eg.gif';
+        }
+        else if( url == 'mvrnhi16' || url == 'flow26-eg' ){
+            $scope.small_button = true;
+            $scope.flowImg = '/images/eg/flow/flow26-eg.gif';
+        }
+        else if( url == 'mvrnhi17' || url == 'flow27-eg' ){
+            $scope.small_button = true;
+            $scope.flowImg = '/images/eg/flow/flow28-eg.gif';
+        }
+        else if( url == 'mvrnhi18' || url == 'flow28-eg' ){
+            $scope.small_button = true;
+            $scope.flowImg = '/images/eg/flow/flow28-eg.gif';
+        }
+        else if( url == 'mvrnhi19' || url == 'flow29-eg' ){
+            $scope.small_button = true;
+            $scope.flowImg = '/images/eg/flow/flow29-eg.gif';
+        }
+        else if( url == 'mvrnhi20' || url == 'flow30-eg' ){
+            $scope.small_button = true;
+            $scope.flowImg = '/images/eg/flow/flow30-eg.gif';
+        }
+        else if( url == 'mvrnhi21' || url == 'flow31-eg' ){
+            $scope.small_button = true;
+            $scope.flowImg = '/images/eg/flow/flow31-eg.gif';
+        }
+        else if( url == 'mvrnhi22' || url == 'flow32-eg' ){
+            $scope.small_button = true;
+            $scope.flowImg = '/images/eg/flow/flow32-eg.gif';
+        }
+        else if( url == 'mvrnhi23' || url == 'flow33-eg' ){
+            $scope.small_button = true;
+            $scope.flowImg = '/images/eg/flow/flow33-eg.gif';
+        }
+        else if( url == 'mvrnhi24' || url == 'flow34-eg' ){
+            $scope.small_button = true;
+            $scope.flowImg = '/images/eg/flow/flow34-eg.gif';
+        }
+        else if( url == 'mvrnhi25' || url == 'flow35-eg' ){
+            $scope.small_button = true;
+            $scope.flowImg = '/images/eg/flow/flow35-eg.gif';
+        }
+        else if( url == 'mvrnhi26' || url == 'flow36-eg' ){
+            $scope.small_button = true;
+            $scope.flowImg = '/images/eg/flow/flow36-eg.gif';
+        }
+        else if( url == 'mvrnhi27' || url == 'flow37-eg' ){
+            $scope.small_button = true;
+            $scope.flowImg = '/images/eg/flow/flow37-eg.gif';
+        }
+        else if( url == 'mvrnhi28' || url == 'flow38-eg' ){
+            $scope.small_button = true;
+            $scope.flowImg = '/images/eg/flow/flow38-eg.gif';
+        }
+        else if( url == 'mvrnhi29' || url == 'flow39-eg' ){
+            $scope.small_button = true;
+            $scope.flowImg = '/images/eg/flow/flow39-eg.gif';
+        }
+        else if( url == 'mvrnhi30' || url == 'flow40-eg' ){
+            $scope.small_button = true;
+            $scope.flowImg = '/images/eg/flow/flow40-eg.gif';
+        }
+        else if( url == 'mvrnhi31' ){
+            $scope.small_button = true;
+            $scope.flowImg = '/images/eg/flow/mvrnhi/flow31-mvrnhi.png';
+        }
+        else if( url == 'mvrnhi32' ){
+            $scope.small_button = true;
+            $scope.flowImg = '/images/eg/flow/mvrnhi/flow32-mvrnhi.png';
+        }
+        else if( url == 'mvrnhi33' ){
+            $scope.small_button = true;
+            $scope.flowImg = '/images/eg/flow/mvrnhi/flow33-mvrnhi.png';
+        }
+        else if( url == 'mvrnhi34' ){
+            $scope.small_button = true;
+            $scope.flowImg = '/images/eg/flow/mvrnhi/flow34-mvrnhi.png';
+        }
+        else if( url == 'mvrnhi35' ){
+            $scope.small_button = true;
+            $scope.flowImg = '/images/eg/flow/mvrnhi/flow35-mvrnhi.png';
+        }
+        else if( url == 'mvrnhi36' ){
+            $scope.small_button = true;
+            $scope.flowImg = '/images/eg/flow/mvrnhi/flow36-mvrnhi.png';
+        }
+        else if( url == 'mvrnhi37' ){
+            $scope.small_button = true;
+            $scope.flowImg = '/images/eg/flow/mvrnhi/flow37-mvrnhi.png';
+        }
+        else if( url == 'mvrnhi38' ){
+            $scope.small_button = true;
+            $scope.flowImg = '/images/eg/flow/mvrnhi/flow38-mvrnhi.png';
+        }
+        else if( url == 'mvrnhi39' ){
+            $scope.small_button = true;
+            $scope.flowImg = '/images/eg/flow/mvrnhi/flow39-mvrnhi.png';
+        }
+        else if( url == 'mvrnhi40' ){
+            $scope.small_button = true;
+            $scope.flowImg = '/images/eg/flow/mvrnhi/flow40-mvrnhi.png';
+        }
+        else if( url == 'mvrnhi41' ){
+            $scope.small_button = true;
+            $scope.flowImg = '/images/eg/flow/mvrnhi/flow41-mvrnhi.png';
+        }
+        else if( url == 'mvrnhi42' ){
+            $scope.small_button = true;
+            $scope.flowImg = '/images/eg/flow/mvrnhi/flow42-mvrnhi.png';
+        }
+        else if( url == 'mvrnhi43' ){
+            $scope.small_button = true;
+            $scope.flowImg = '/images/eg/flow/mvrnhi/flow43-mvrnhi.png';
+        }
+        else if( url == 'mvrnhi44' ){
+            $scope.small_button = true;
+            $scope.flowImg = '/images/eg/flow/mvrnhi/flow44-mvrnhi.png';
+        }
+        else if( url == 'mvrnhi45' ){
+            $scope.small_button = true;
+            $scope.flowImg = '/images/eg/flow/mvrnhi/flow45-mvrnhi.png';
+        }
+        else if( url == 'flow41-eg' ){
+            $scope.small_button = true;
+            $scope.flowImg = '/images/eg/flow/flow41-eg.gif';
+        }
+        else if( url == 'flow42-eg' ){
+            $scope.small_button = true;
+            $scope.flowImg = '/images/eg/flow/flow42-eg.gif';
+        }
+        else if( url == 'flow43-eg' ){
+            $scope.small_button = true;
+            $scope.flowImg = '/images/eg/flow/flow43-eg.gif';
+        }
+        else if( url == 'flow44-eg' ){
+            $scope.small_button = true;
+            $scope.flowImg = '/images/eg/flow/flow44-eg.gif';
+        }
+        else if( url == 'flow45-eg' ){
+            $scope.small_button = true;
+            $scope.flowImg = '/images/eg/flow/flow45-eg.gif';
+        }
+        else if( url == 'flow46-eg' ){
+            $scope.small_button = true;
+            $scope.flowImg = '/images/eg/flow/flow46-eg.gif';
+        }
+        else if( url == 'flow47-eg' ){
+            $scope.small_button = true;
+            $scope.flowImg = '/images/eg/flow/flow47-eg.gif';
+        }
+        else if( url == 'flow48-eg' ){
+            $scope.small_button = true;
+            $scope.flowImg = '/images/eg/flow/flow48-eg.gif';
+        }
+        else if( url == 'flow49-eg' ){
+            $scope.small_button = true;
+            $scope.flowImg = '/images/eg/flow/flow49-eg.gif';
+        }
+        else if( url == 'flow50-eg' ){
+            $scope.small_button = true;
+            $scope.flowImg = '/images/eg/flow/flow50-eg.gif';
+        }
+        else if( url == 'flow51-eg' ){
+            $scope.small_button = true;
+            $scope.flowImg = '/images/eg/flow/flow51-eg.gif';
+        }
+        else if( url == 'flow52-eg' ){
+            $scope.small_button = true;
+            $scope.flowImg = '/images/eg/flow/flow52-eg.gif';
+        }
+        else if( url == 'flow53-eg' ){
+            $scope.small_button = true;
+            $scope.flowImg = '/images/eg/flow/flow53-eg.gif';
+        }
+        else if( url == 'flow54-eg' ){
+            $scope.small_button = true;
+            $scope.flowImg = '/images/eg/flow/flow54-eg.gif';
+        }
+        else if( url == 'flow55-eg' ){
+            $scope.small_button = true;
+            $scope.flowImg = '/images/eg/flow/flow55-eg.gif';
+        }
+        else if( url == 'flow56-eg' ){
+            $scope.small_button = true;
+            $scope.flowImg = '/images/eg/flow/flow56-eg.gif';
+        }
+        else if( url == 'flow57-eg' ){
+            $scope.small_button = true;
+            $scope.flowImg = '/images/eg/flow/flow57-eg.gif';
+        }
+        else if( url == 'flow58-eg' ){
+            $scope.small_button = true;
+            $scope.flowImg = '/images/eg/flow/flow58-eg.gif';
+        }
+        else if( url == 'flow59-eg' ){
+            $scope.small_button = true;
+            $scope.flowImg = '/images/eg/flow/flow59-eg.gif';
+        }
+        else if( url == 'flow60-eg' ){
+            $scope.small_button = true;
+            $scope.flowImg = '/images/eg/flow/flow60-eg.gif';
+        }
+        else if( url == 'flow61-eg' ){
+            $scope.small_button = true;
+            $scope.flowImg = '/images/eg/flow/flow61-eg.gif';
+        }
+        else if( url == 'flow62-eg' ){
+            $scope.small_button = true;
+            $scope.flowImg = '/images/eg/flow/flow62-eg.gif';
+        }
+        else if( url == 'flow63-eg' ){
+            $scope.small_button = true;
+            $scope.flowImg = '/images/eg/flow/flow56-eg.gif';
+        }
+        else if( url == 'flow64-eg' ){
+            $scope.small_button = true;
+            $scope.flowImg = '/images/eg/flow/flow57-eg.gif';
+        }
+        else if( url == 'flow65-eg' ){
+            $scope.small_button = true;
+            $scope.flowImg = '/images/eg/flow/flow58-eg.gif';
+        }
+        else if( url == 'flow66-eg' ){
+            $scope.small_button = true;
+            $scope.flowImg = '/images/eg/flow/flow69-eg.gif';
+        }
+        else if( url == 'flow67-eg' ){
+            $scope.small_button = true;
+            $scope.flowImg = '/images/eg/flow/flow60-eg.gif';
+        }
+        else if( url == 'flow68-eg' ){
+            $scope.small_button = true;
+            $scope.flowImg = '/images/eg/flow/flow61-eg.gif';
+        }
+        else if( url == 'flow69-eg' ){
+            $scope.small_button = true;
+            $scope.flowImg = '/images/eg/flow/flow62-eg.gif';
+        }
+        else if( url == 'flow70-eg' || url == 'flow75-eg'){
+            $scope.small_button = true;
+            $scope.flowImg = '/images/eg/flow/flow70-eg.gif';
+        }
+        else if( url == 'flow71-eg' || url == 'flow76-eg'){
+            $scope.small_button = true;
+            $scope.flowImg = '/images/eg/flow/flow71-eg.gif';
+        }
+        else if( url == 'flow72-eg' || url == 'flow77-eg'){
+            $scope.small_button = true;
+            $scope.flowImg = '/images/eg/flow/flow72-eg.gif';
+        }
+        else if( url == 'flow73-eg' || url == 'flow78-eg'){
+            $scope.small_button = true;
+            $scope.flowImg = '/images/eg/flow/flow73-eg.gif';
+        }
+        else if( url == 'flow74-eg' || url == 'flow79-eg'){
+            $scope.small_button = true;
+            $scope.flowImg = '/images/eg/flow/flow74-eg.gif';
+        }
+        else if( url == 'flow80-eg'){
+            $scope.small_button = true;
+            $scope.flowImg = '/images/eg/flow/flow80-eg.gif';
+        }
+        else if( url == 'flow81-eg'){
+            $scope.small_button = true;
+            $scope.flowImg = '/images/eg/flow/flow81-eg.gif';
+        }
+        else if( url == 'flow82-eg'){
+            $scope.small_button = true;
+            $scope.flowImg = '/images/eg/flow/flow82-eg.gif';
+        }
+        else if( url == 'flow83-eg'){
+            $scope.small_button = true;
+            $scope.flowImg = '/images/eg/flow/flow83-eg.gif';
+        }
+        else if( url == 'flow84-eg'){
+            $scope.small_button = true;
+            $scope.flowImg = '/images/eg/flow/flow84-eg.gif';
+        }
+        else if( url == 'flow85-eg'){
+            $scope.small_button = true;
+            $scope.flowImg = '/images/eg/flow/flow85-eg.gif';
+        }
+        else if( url == 'flow86-eg'){
+            $scope.small_button = true;
+            $scope.flowImg = '/images/eg/flow/flow86-eg.gif';
+        }
+        else if( url == 'flow87-eg'){
+            $scope.small_button = true;
+            $scope.flowImg = '/images/eg/flow/flow87-eg.gif';
+        }
+        else if( url == 'flow1-eg-bg' ){
+            $scope.flowImg = '/images/eg/flow/bg/flow1-eg-bg.png';
+        }
+        else if( url == 'flow2-eg-bg' ){
+            $scope.flowImg = '/images/eg/flow/bg/flow2-eg-bg.png';
+        }
+        else if( url == 'flow3-eg-bg' ){
+            $scope.flowImg = '/images/eg/flow/bg/flow3-eg-bg.png';
+        }
+        else if( url == 'flow4-eg-bg' ){
+            $scope.flowImg = '/images/eg/flow/bg/flow4-eg-bg.png';
+        }
+        else if( url == 'flow5-eg-bg' ){
+            $scope.flowImg = '/images/eg/flow/bg/flow5-eg-bg.png';
+        }
+        else if( url == 'flow6-eg-bg' ){
+            $scope.flowImg = '/images/eg/flow/bg/flow6-eg-bg.png';
+        }
+        else if( url == 'flow7-eg-bg' ){
+            $scope.flowImg = '/images/eg/flow/bg/flow7-eg-bg.png';
+        }
+        else if( url == 'flow8-eg-bg' ){
+            $scope.flowImg = '/images/eg/flow/bg/flow8-eg-bg.png';
+        }
+        else if( url == 'flow9-eg-bg' ){
+            $scope.flowImg = '/images/eg/flow/bg/flow9-eg-bg.png';
+        }
+        else if( url == 'flow10-eg-bg' ){
+            $scope.flowImg = '/images/eg/flow/bg/flow10-eg-bg.png';
+        }
+        else if( url == 'flow11-eg-bg' ){
+            $scope.flowImg = '/images/eg/flow/bg/flow11-eg-bg.png';
+        }
+        else if( url == 'flow12-eg-bg' ){
+            $scope.flowImg = '/images/eg/flow/bg/flow12-eg-bg.png';
+        }
+        else if( url == 'flow13-eg-bg' ){
+            $scope.flowImg = '/images/eg/flow/bg/flow13-eg-bg.png';
+        }
+        else if( url == 'flow14-eg-bg' ){
+            $scope.flowImg = '/images/eg/flow/bg/flow14-eg-bg.png';
+        }
+        else if( url == 'flow15-eg-bg' ){
+            $scope.flowImg = '/images/eg/flow/bg/flow15-eg-bg.png';
+        }
+        if( url == 'flow1-eg' )
+        {
+            $scope.flowImg = '/images/eg/flow/flow1-eg.gif';
+        }
+        else if( url == 'flow2-eg' )
+        {
+            $scope.flowImg = '/images/eg/flow/flow2-eg.gif';
+        }
+        else if( url == 'flow3-eg' )
+        {
+            $scope.flowImg = '/images/eg/flow/flow3-eg.gif';
+        }
+        else if( url == 'flow4-eg' )
+        {
+            $scope.flowImg = '/images/eg/flow/flow4-eg.gif';
+        }
+        else if( url == 'flow5-eg' )
+        {
+            $scope.small_button = true;
+            $scope.flowImg = '/images/eg/flow/flow5-eg.gif';
+        }
+        else if( url == 'flow6-eg' )
+        {
+            $scope.small_button = true;
+            $scope.flowImg = '/images/eg/flow/flow6-eg.gif';
+        }
+        else if( url == 'flow7-eg' )
+        {
+            $scope.small_button = true;
+            $scope.flowImg = '/images/eg/flow/flow7-eg.gif';
+        }
+        else if( url == 'flow8-eg' )
+        {
+            $scope.small_button = true;
+            $scope.flowImg = '/images/eg/flow/flow8-eg.gif';
+        }
+        else if( url == 'flow9-eg' )
+        {
+            $scope.small_button = true;
+            $scope.flowImg = '/images/eg/flow/flow9-eg.gif';
+        }
+        else if( url == 'flow10-eg' )
+        {
+            $scope.small_button = true;
+            $scope.flowImg = '/images/eg/flow/flow10-eg.gif';
+        }
+        else if( url == 'flow11-eg' )
+        {
+            $scope.small_button = true;
+            $scope.flowImg = '/images/eg/flow/flow11-eg.gif';
+        }
+        else if( url == 'flow12-eg' )
+        {
+            $scope.small_button = true;
+            $scope.flowImg = '/images/eg/flow/flow12-eg.gif';
+        }
+        else if( url == 'flow13-eg' )
+        {
+            $scope.small_button = true;
+            $scope.flowImg = '/images/eg/flow/flow13-eg.gif';
+        }
+        else if( url == 'flow14-eg' )
+        {
+            $scope.small_button = true;
+            $scope.flowImg = '/images/eg/flow/flow14-eg.gif';
+        }
+        else if( url == 'flow15-eg' )
+        {
+            $scope.small_button = true;
+            $scope.flowImg = '/images/eg/flow/flow15-eg.gif';
+        }
+        else if( url == 'flow16-eg' )
+        {
+            $scope.small_button = true;
+            $scope.flowImg = '/images/eg/flow/flow16-eg.gif';
+        }
+        else if( url == 'flow17-eg' )
+        {
+            $scope.small_button = true;
+            $scope.flowImg = '/images/eg/flow/flow17-eg.gif';
+        }
+        else if( url == 'flow59-eg-new' )
+        {
+            $scope.flowImg = '/images/eg/flow/flow59-eg.gif';
+        }
+        else if( url == 'flow1-eg-sub' )
+        {
+            $scope.flowImg = '/images/eg/flow/flow1-eg-sub.gif';
+        }
+        else if( url == 'flow2-eg-sub' )
+        {
+            $scope.flowImg = '/images/eg/flow/flow2-eg-sub.gif';
+        }
+        else if( url == 'flow3-eg-sub' )
+        {
+            $scope.flowImg = '/images/eg/flow/flow3-eg-sub.gif';
+        }
+        else if( url == 'flow4-eg-sub' )
+        {
+            $scope.flowImg = '/images/eg/flow/flow4-eg-sub.gif';
+        }
+        else if( url == 'flow5-eg-sub' )
+        {
+            $scope.flowImg = '/images/eg/flow/flow5-eg-sub.gif';
+        }
+        else if( url == 'flow6-eg-sub' )
+        {
+            $scope.flowImg = '/images/eg/flow/flow6-eg-sub.gif';
+        }
+      }
+      
+      getIframe($http, $scope, $sce, asIframe);
+      
+}])
+
+.controller('FlowModalController', ['$i18n', '$rootScope', '$mdDialog', '$scope', '$sce', '$http',
+    function($i18n, $rootScope, $mdDialog, $scope, $sce, $http){
+        getIframe($http, $scope, $sce);
+    }
+])
+
+.controller('Subscribe', ['$i18n', '$http', '$scope', '$sce', '$rootScope', '$location', function($i18n, $http, $scope, $sce, $rootScope, $location){
+    document.title = $i18n('titles.subscribe');
+    $scope.user = {};
+    $scope.user.msisdn = $location.search().msisdn||'';
+    $scope.user.price = $location.search().price||'';
+    $scope.user.identid = $location.search().identid||'';
+    $scope.user.operator = $location.search().operator||'';
+    $scope.user.ref_id = $location.search().ref_id||'';
+    $scope.user.trans_id = $location.search().trans_id||'';
+    $rootScope.nopadding = false;
+    $rootScope.nohead = false;
+    $rootScope.nback = false;
+    $rootScope.loadFinish= true;
+    $scope.initPayment = location.pathname === '/subscribe';
+    $scope.sending = false;
+    
+    $scope.redirect = function() {
+        if( $scope.sending )
+        {
+            return false;
+        }
+        if( $scope.user.msisdn.length < 8 && !$scope.initPayment )
+        {
+            malert($i18n('labels.phone') + ': min length 8 numbers');
+        }
+        else
+        {
+            $scope.sending = true;
+            $http.post('/api/payment/subscribe', $scope.user).success(function(res)
+            {
+                if( res.success == true )
+                {
+                    location.href = res.redirectUrl || '/';
+                }
+                else
+                {
+                    if(res.error)
+                    {
+                        malert(res.error);
+                    }
+                    if( $scope.initPayment )
+                    {
+                        $location.path('/phone');
+                    }
+                }
+                $scope.sending = false;
+            }).error(function(){
+                malert('Internal server error');
+                $scope.sending = false;
+            });   
+        }
+    };
+    
+    if( $scope.initPayment )
+    {
+        $scope.redirect();
+    }
+        
+}])
+
+.controller('Text', ['$i18n', '$scope', '$location', function($i18n, $scope, $location){
+    var url = $location.path().replace('/', '');
+    document.title = $i18n('titles.' + url);
+    $scope.$root.nback = false;
+    $scope.text = $i18n('texts.' + url);
+    $scope.$root.loadFinish= true;
+    $scope.$root.homepage = false;
+    
+    $scope.scwidth = $(document).width();
+    $scope.$root.nopadding = false;
+    $scope.$root.nohead = false;
+    
+    $(window).resize(function(){
+        $scope.$apply(function(){
+           $scope.scwidth = $(document).width();
+        });
+    });
+}])
+
+.controller('Close', ['$i18n', '$scope', '$http', function($i18n, $scope, $http){
+    $scope.$root.loadFinish = true;
+    $scope.errMessage = '';
+    $scope.errMessagePhone = '';
+    $scope.phone = '';
+    $scope.notAuthed = true;
+    document.title = $i18n('titles.close');
+    $scope.close = function(){
+        $scope.errMessagePhone = '';
+        if( $scope.phone.length < 5 )
+        {
+            $scope.errMessagePhone = $i18n('labels.close.phone_message');
+            return false;
+        }
+        
+        $scope.errMessage = '';
+        $scope.$root.loadFinish = false;
+        $http.post('/api/payment/close', {phone : $scope.phone}).success(function(response){
+            if( response.success )
+            {
+                location.href = '/';
+                return true;
+            }
+            
+            $scope.$root.loadFinish = true;
+            if( response.errPhone )
+            {
+                $scope.errMessagePhone = $i18n('labels.close.phone_message');
+            }
+            else
+            {
+                $scope.errMessage = $i18n('labels.close.err_message');
+            }
+            return false;
+        });
+    };
+    
+    $scope.cancel = function(){
+        window.history.back();
+    };
+}])
+.controller('Payment', ['$i18n', '$http', '$scope', '$sce', '$rootScope', function($i18n, $http, $scope, $sce, $rootScope){
+    document.title = $i18n('titles.payment');
+    $rootScope.nopadding = false;
+    $rootScope.nohead = false;
+    $rootScope.nback = false;
+    $rootScope.loadFinish= true;
+}])
+.controller('Main', ['$i18n', '$http', '$scope', '$sce', '$rootScope', function($i18n, $http, $scope, $sce, $rootScope){
+    document.title = $i18n('titles.flow1');
+    $scope.scwidth = $(document).width();
+    getIframe($http, $scope, $sce);
+    $rootScope.nopadding = false;
+    $rootScope.nohead = false;
+    $rootScope.nback = false;
+    $rootScope.loadFinish= true;
+    $rootScope.homepage = true;
+    $scope.iframeShow = false;
+    $scope.langEg = LANG === 'eg' ? true : false;
+    
+    if( LANG === 'en' )
+    {
+        if( localStorage.getItem('iframeShow') )
+        {
+            $scope.iframeShow = true;
+        }
+        else
+        {
+            $scope.iframeShow = false;
+        }
+    }
+    else
+    {
+        $scope.iframeShow = true;
+    }
+        
+    $scope.showIframe = function()
+    {
+        localStorage.setItem("iframeShow", true);
+        $scope.iframeShow = true;
+    }
+
+    $scope.getTitle = function(k){
+        return $i18n('labels.flow1.game_title_' + (k+1));
+    };
+    
+    $(window).resize(function(){
+        $scope.$apply(function(){
+           $scope.scwidth = $(document).width();
+        });
+    });
+
+}])
+.controller('SignUp', ['$i18n', '$http', '$scope', '$rootScope', '$timeout', '$location', function($i18n, $http, $scope, $rootScope, $timeout, $location){
+    document.title = $i18n('titles.signup');
+    $scope.user = {};
+    $scope.user.email = '';
+    $scope.user.password = '';
+    $scope.saving = false;
+    $rootScope.loadFinish= true;
+    $scope.blockedF = false;
+    var steps = 1;
+    $scope.saveMessage = $i18n('messages.payment_' + steps);
+    
+    if( typeof(showRegisterMessage) != 'undefined' )
+    {
+        malert(showRegisterMessage, 10000);
+    }
+    
+    $scope.clickRedirect = function(){
+        if( $scope.saving || $scope.blockedF )
+        {
+            return false;
+        }
+        $scope.blockedF = true;
+        $rootScope.redirect('/signupWithFacebook');
+    };
+    
+    $scope.submit = function(save){
+        if($scope.form1.$valid && (!$scope.saving || save) && !$scope.blockedF )
+        {
+            $scope.saving = true;
+            $http.post('/api/register', $scope.user).success(function(res)
+            {
+               if(res.status)
+               {
+                    location.href = '/';
+               }
+               else
+               {
+                    if( res.repeat && steps != 3 )
+                    {
+                        steps++;
+                        $scope.saveMessage = $i18n('messages.payment_' + steps);
+                        $timeout($scope.submit.bind(null, true), 7000);
+                    }
+                    else if( res.registered )
+                    {
+                        location.href = '/';
+                    }
+                    else
+                    {
+                        steps = 1;
+                        $scope.saving = false;
+                        malert(res.msg);
+                        $scope.saveMessage = $i18n('messages.payment_' + steps);
+                    }
+               }
+            });
+        }
+    };
+    
+    $scope.main = function(){
+        $rootScope.redirect('/');
+    };
+    /*
+    $('.datepicker').datepicker({
+        endDate: '-12y',
+        orientation: 'top left',
+        autoclose: true
+    }).on('changeDate', function(e){
+        $scope.$apply(function(){
+            $scope.user.birthdate = e.target.value;
+        });
+    });
+    
+    $('#basic-addon1').on('click tap', function(e){
+        $('.datepicker').focus();
+        e.preventDefault();
+        e.stopPropagation();
+        e.stopImmediatePropagation();
+    });*/
+}])
+
+.controller('Trial', ['$i18n', '$scope', '$http', '$routeParams', '$location', function($i18n, $scope, $http, $routeParams, $location){
+    document.title = $i18n('titles.game');
+    $scope.$root.loadFinish = true;
+    $scope.run = false;
+
+    if($(document).height() < $(document).width())
+    {
+        malert($i18n('labels.game.rotate_display'));
+    }
+    
+    $http.post('/api/checkTrial', {code:$routeParams.code}).success(function(response){
+        if( !response.status )
+        {
+            $location.path('/');
+            return false;
+        }
+        $scope.run = true;
+    }).error(function(){
+        $location.path('/');
+    });
+    
+    $scope.src = '/trial/' + $routeParams.code + '/index.html?t=' + (new Date().getTime());
+    $scope.iframe_height = $(window).height() - $('.header').height();
+    $(window).unbind('resize').resize(function(){
+        $scope.$apply(function(){
+            $scope.iframe_height = $(window).height() - $('.header').height();
+        });
+    });
+    
+}])
+.controller('Game', ['$i18n', '$http', '$scope', '$routeParams', '$rootScope', function($i18n, $http, $scope, $routeParams, $rootScope){
+    document.title = $i18n('titles.game');
+    $rootScope.loadFinish = true;
+    $scope.run = false;
+    var diff = 35;
+
+    if($(document).height() < $(document).width()){
+        malert($i18n('labels.game.rotate_display'));
+        setTimeout(function(){
+            $scope.$apply(function(){
+                $scope.run = true;
+            });
+        },3000);
+    }
+    else
+    {
+        $scope.run = true;
+    }
+
+    $scope.src = '/game/' + $routeParams.id + '/index.html?t=' + (new Date().getTime());
+    $scope.iframe_height = $(window).height() - $('.header').height() - diff;
+    $(window).resize(function(){
+        $scope.$apply(function(){
+            $scope.iframe_height = $(window).height() - $('.header').height() - diff;
+        });
+    });
+}])
+
+.controller('Page', ['$i18n', '$http', '$routeParams', '$scope', '$sce', function($i18n, $http, $routeParams, $scope, $sce){
+    $scope.page = {};
+    $scope.page.url = $routeParams.url;
+    $http.post('/api/page', $scope.page).success(function(res){
+        $scope.$root.loadFinish = true;
+        if(res.status)
+        {
+            $scope.page.title = res.title;
+            $scope.page.content = $sce.trustAsHtml(res.content);
+        }
+        else
+        {
+             $scope.page.title = $i18n('titles.not_found');
+        }
+        document.title = $scope.page.title;
+    });
+}])
+
+.controller('Complete', ['$i18n', '$http', '$scope', '$location', function($i18n, $http, $scope, $location){
+    document.title = $i18n('titles.complete');
+    $scope.$root.loadFinish = true;
+    $scope.run = false;
+    $scope.checking = false;
+    $scope.checkText = $i18n('labels.complete.check');
+    
+    $scope.check = function(){
+        if( $scope.checking )
+        {
+            return false;
+        }
+        $scope.checking = true;
+        $scope.checkText = $i18n('labels.complete.checking');
+        $http.post('/api/check', {phone: $scope.phone})
+            .then(function(response){
+                if( response.data.redirect )
+                {
+                    $scope.$root.showCompleteButton = false;
+                    $location.path(response.data.redirect);
+                    return false;
+                }
+                if( response.data.message )
+                {
+                    alert(response.data.message);
+                }
+                $scope.checking = false;
+                $scope.checkText = $i18n('labels.complete.check');
+            }, function(response){
+                $scope.checking = false;
+                $scope.checkText = $i18n('labels.complete.check');
+            });
+    };
+    
+}])
+
+.controller('Login', ['$i18n', '$http', '$scope', '$rootScope', function($i18n, $http, $scope, $rootScope){
+    document.title = $i18n('titles.signin');
+    $scope.user = {};
+    $scope.user.email = '';
+    $scope.user.password = '';
+    $rootScope.loadFinish= true;
+    $scope.submit = function(){
+        if($scope.form1.$valid)
+        {
+            $http.post('/api/login', $scope.user).success(function(res)
+            {
+               if(res.status == true)
+               {
+                   location.href = '/';
+               }
+               else
+               {
+                   alert(res.msg);
+               }
+            });
+        }
+    };
+}])
+
+.controller('forgotPassword1', ['$i18n', '$http', '$routeParams', '$scope', '$sce', '$rootScope', function($i18n, $http, $routeParams, $scope, $sce, $rootScope){
+    document.title = $i18n('titles.forgotPassword1');
+    $scope.user = {};
+    $scope.user.email = '';
+    $scope.user.step = 'step1';
+    $rootScope.loadFinish= true;
+    $scope.submitStep1 = function(){
+        if( $scope.form1.$valid )
+        {
+            $http.post('/api/forgotPassword', $scope.user).success(function(res)
+            {
+               console.log(res);
+               if(res.status == true)
+               {
+                   malert($i18n('messages.check_email_for_password'));
+               }
+               else
+               {
+                   malert(res.msg);
+               }
+            });
+        }
+    };
+}])
+
+.controller('Ucancel', ['$i18n', '$rootScope', function($i18n, $rootScope){
+    document.title = $i18n('titles.ucancel');
+    $rootScope.loadFinish= true;
+}])
+
+.controller('forgotPassword2', ['$i18n', '$http', '$routeParams', '$scope', '$location', '$rootScope', function($i18n, $http, $routeParams, $scope, $location, $rootScope){
+    document.title = $i18n('titles.forgotPassword2');
+    $scope.user = {};
+    $scope.user.password = '';
+    $scope.user.password2 = '';
+    $scope.user.token = $routeParams.token;
+    $scope.user.step = 'step2';
+    $rootScope.loadFinish= true;
+    $scope.submitStep2 = function(){
+        if($scope.form2.$valid)
+        {
+            $http.post('/api/forgotPassword', $scope.user).success(function(res)
+            {
+               if(res.status==true)
+               {
+                   alert($i18n('messages.password_changed'));
+                   $location.path('/signin');
+               }
+               else
+               {
+                   alert(res.msg);
+               }
+            });
+        }
+    };
+}]);
+
+
+function sliderNext(val, count){
+     if(val >= count-1)
+         return 0;
+     else
+         return val+1;
+}
+
+function sliderPrev(val, count){
+     if(val <= 0)
+         return count-1;
+     else
+         return val-1;
+}
+
+function getIframe($http, $scope, $sce, asIframe){
+    $scope.loading = false;
+    $scope.iframe = $sce.trustAsHtml('');
+    $scope.showButton = false;
+    $scope.redirectUrl = '';
+    
+    if( typeof(showMessage) != 'undefined' )
+    {
+        malert(showMessage);
+    }
+    else if( typeof(iframeUrl) != 'undefined' )
+    {
+        $scope.iframe = $sce.trustAsHtml('<iframe src="' + iframeUrl + '" frameborder="0"></iframe>');
+    }
+    else if( typeof(redirectUrl) != 'undefined' )
+    {
+        if( asIframe )
+        {
+            $scope.iframe = $sce.trustAsHtml('<iframe src="' + redirectUrl + '" frameborder="0"></iframe>');
+        }
+        else
+        {
+            $scope.redirectUrl = redirectUrl;
+            $scope.showButton = true;
+        }
+    }
+
+    $scope.redirect = function(url){
+        var url = url || $scope.redirectUrl;
+        location.href = url;
+    };
+    
+    return false;
+}

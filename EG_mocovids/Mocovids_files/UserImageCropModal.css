@@ -1,0 +1,611 @@
+#UserImageCropModal {
+    background: rgba(0, 0, 0, .4);
+}
+
+#UserImageCropModal .user-image-crop-modal-section {
+    position: relative;
+    display: block;
+
+    margin: 40px auto 40px;
+    padding: 0;
+
+    border-radius: 3px;
+    box-shadow: 0 2px 26px rgba(0, 0, 0, .3), 0 0 0 1px rgba(0, 0, 0, .1);
+
+    background: #fff;
+
+    width: 480px;
+    height: auto;
+
+    color: #141823;
+    font-weight: normal;
+    font-variant: normal;
+    font-style: normal;
+    font-size: 12px;
+    line-height: 1.34;
+    font-family: helvetica, arial, sans-serif;
+}
+
+#UserImageCropModal .user-image-crop-modal-section .user-image-crop-modal-header {
+    position: relative;
+    display: block;
+
+    margin: 0;
+    padding: 10px 12px;
+
+    border-bottom: 1px solid #e5e5e5;
+    border-radius: 3px 3px 0 0;
+
+    background-color: #f6f7f8;
+
+    width: auto;
+    height: auto;
+
+    color: #4e5665;
+    font-weight: bold;
+    line-height: 19px;
+}
+
+#UserImageCropModal .user-image-crop-modal-section .user-image-crop-modal-header .title {
+    position: relative;
+    display: inline-block;
+
+    margin: 0;
+    padding: 0;
+
+    width: auto;
+    height: auto;
+
+    float: left;
+}
+
+#UserImageCropModal .user-image-crop-modal-section .user-image-crop-modal-header .title span {
+    position: relative;
+    display: inline-block;
+
+    margin: 0;
+    padding: 0;
+
+    font-size: 14px;
+    line-height: 19px;
+}
+
+#UserImageCropModal .user-image-crop-modal-section .user-image-crop-modal-header .actions {
+    position: relative;
+    display: inline-block;
+
+    margin: 0;
+    padding: 0;
+
+    width: auto;
+    height: auto;
+
+    float: right;
+
+    line-height: 19px;
+}
+
+#UserImageCropModal .user-image-crop-modal-section .user-image-crop-modal-header .actions .action {
+    position: relative;
+    display: inline-block;
+
+    margin: 4px 0 0;
+    padding: 0;
+
+    opacity: 1;
+
+    width: 12px;
+    height: 12px;
+}
+
+#UserImageCropModal .user-image-crop-modal-section .user-image-crop-modal-header .actions .action.close {
+    background-image: url('../../CContent/images/Website/facebook/Kvl1gqWFi2Y.png');
+    background-position: -119px -451px;
+    background-repeat: no-repeat;
+    background-size: auto;
+}
+
+#UserImageCropModal .user-image-crop-modal-section .user-image-crop-modal-header .actions .action.close:hover {
+    background-position: -145px -451px;
+}
+
+#UserImageCropModal .user-image-crop-modal-section .user-image-crop-modal-content {
+    position: relative;
+    display: block;
+
+    margin: 0;
+    padding: 0;
+
+    border-radius: 0 0 3px 3px;
+
+    background-color: #fff;
+
+    width: auto;
+
+    height: auto;
+    min-height: 300px;
+
+    font-size: 14px;
+    line-height: 18px;
+}
+
+#UserImageCropModal .user-image-crop-modal-section .user-image-crop-modal-content .user-image-crop {
+    position: relative;
+    display: block;
+
+    margin: 0;
+    padding: 52px 40px;
+
+    overflow: hidden;
+
+    background-color: #f2f2f2;
+
+    width: auto;
+    height: 484px;
+}
+
+#UserImageCropModal .user-image-crop-modal-section .user-image-crop-modal-content .user-image-crop .user-image-crop-section {
+    position: relative;
+    display: block;
+
+    margin: 0 auto;
+    padding: 0;
+
+    width: 320px;
+    height: 320px;
+}
+
+#UserImageCropModal .user-image-crop-modal-section .user-image-crop-modal-content .user-image-crop .user-image-crop-section .user-image-crop-section-objective {
+    position: relative;
+    display: block;
+
+    margin: 0;
+    padding: 0;
+
+    overflow: hidden;
+
+    width: 320px;
+    height: 320px;
+
+    z-index: 10;
+}
+
+#UserImageCropModal .user-image-crop-modal-section .user-image-crop-modal-content .user-image-crop .user-image-crop-section .user-image-crop-section-objective img {
+    position: absolute;
+    display: block;
+
+    margin: 0;
+    padding: 0;
+
+    width: auto;
+    height: auto;
+
+    cursor: move;
+}
+
+#UserImageCropModal .user-image-crop-modal-section .user-image-crop-modal-content .user-image-crop .user-image-crop-section > img {
+    position: absolute;
+    display: block;
+
+    margin: 0;
+    padding: 0;
+
+    opacity: .3;
+
+    width: auto;
+    height: auto;
+
+    cursor: move;
+}
+
+#UserImageCropModal .user-image-crop-modal-section .user-image-crop-modal-content .user-image-crop .user-image-crop-thumb {
+    position: relative;
+    display: block;
+
+    margin: 8px auto 12px;
+    padding: 0;
+
+    overflow: hidden;
+
+    box-shadow: 0 0 2px rgba(255, 255, 255, .5);
+
+    width: 32px;
+    height: 32px;
+}
+
+#UserImageCropModal .user-image-crop-modal-section .user-image-crop-modal-content .user-image-crop .user-image-crop-thumb img {
+    position: absolute;
+    display: block;
+
+    margin: 0;
+    padding: 0;
+
+    width: auto;
+    height: auto;
+}
+
+#UserImageCropModal .user-image-crop-modal-section .user-image-crop-modal-content .user-image-crop .user-image-crop-slider-section {
+    position: relative;
+    display: block;
+
+    margin: 0 auto;
+    padding: 8px 32px;
+
+    border-radius: 15px;
+
+    background: rgba(0, 0, 0, .5);
+
+    box-shadow: 0 0 2px rgba(255, 255, 255, .5);
+
+    box-sizing: content-box;
+
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+    width: auto;
+    max-width: 200px;
+
+    height: 13px;
+}
+
+#UserImageCropModal .user-image-crop-modal-section .user-image-crop-modal-content .user-image-crop .user-image-crop-slider-section .action {
+    position: absolute;
+    display: block;
+
+    margin: 0;
+    padding: 0;
+
+    width: auto;
+    height: auto;
+
+    top: 4px;
+
+    color: #fff;
+    font-size: 16px;
+    line-height: 16px;
+}
+
+#UserImageCropModal .user-image-crop-modal-section .user-image-crop-modal-content .user-image-crop .user-image-crop-slider-section .action.reduce {
+    left: 13px;
+}
+
+#UserImageCropModal .user-image-crop-modal-section .user-image-crop-modal-content .user-image-crop .user-image-crop-slider-section #user-image-crop-slider {
+    position: relative;
+    display: block;
+
+    margin: 0;
+    padding: 0;
+
+    border-top: none;
+    border-right: none;
+    border-bottom: 1px solid #aaa;
+    border-left: none;
+
+    background: none;
+
+    width: auto;
+    height: 6px;
+}
+
+#UserImageCropModal .user-image-crop-modal-section .user-image-crop-modal-content .user-image-crop .user-image-crop-slider-section #user-image-crop-slider .ui-slider-handle {
+    margin: 4px 0 0 -6px;
+    padding: 0;
+
+    border: none;
+    border-radius: 6px;
+
+    outline: none;
+
+    background: #fff !important;
+
+    width: 13px;
+    height: 13px;
+
+    cursor: move;
+    position: absolute;
+    top: -5px;
+}
+
+#UserImageCropModal .user-image-crop-modal-section .user-image-crop-modal-content .user-image-crop .user-image-crop-slider-section .action.increase {
+    right: 10px;
+}
+
+#UserImageCropModal .user-image-crop-modal-section .user-image-crop-modal-content .saving {
+    position: absolute;
+    display: block;
+
+    margin: 0;
+    padding: 0;
+
+    background-color: rgba(0, 0, 0, .4);
+
+    top: 0;
+
+    width: 100%;
+    height: 484px;
+
+    z-index: 20;
+}
+
+#UserImageCropModal .user-image-crop-modal-section .user-image-crop-modal-content .saving .preloader {
+    position: absolute;
+    display: inline-block;
+
+    margin: 0;
+    padding: 0;
+
+    background-image: url('../../CContent/images/Website/facebook/t-wz8gw1xG1.png');
+    background-position: 0 0;
+    background-repeat: no-repeat;
+
+    -webkit-animation: -webkit-rotateSpinner 1.2s linear infinite running;
+    -moz-animation: -moz-rotateSpinner 1.2s linear infinite running;
+    -o-animation: -o-rotateSpinner 1.2s linear infinite running;
+    -ms-animation: -ms-rotateSpinner 1.2s linear infinite running;
+    animation: rotateSpinner 1.2s linear infinite running;
+
+    top: -webkit-calc(50% - 12px);
+    top: -moz-calc(50% - 12px);
+    top: -o-calc(50% - 12px);
+    top: -ms-calc(50% - 12px);
+    top: calc(50% - 12px);
+
+    left: -webkit-calc(50% - 12px);
+    left: -moz-calc(50% - 12px);
+    left: -o-calc(50% - 12px);
+    left: -ms-calc(50% - 12px);
+    left: calc(50% - 12px);
+
+    width: 24px;
+    height: 24px;
+}
+
+#UserImageCropModal .user-image-crop-modal-section .user-image-crop-modal-content .user-image-crop-modal-actions {
+    position: relative;
+    display: block;
+
+    margin: 0 12px;
+    padding: 12px 0;
+
+    border-top: 1px solid #dcdee3;
+
+    background-color: #fff;
+
+    width: auto;
+    height: auto;
+}
+
+#UserImageCropModal .user-image-crop-modal-section .user-image-crop-modal-content .user-image-crop-modal-actions .help {
+    position: relative;
+    display: inline-block;
+
+    margin: 0;
+    padding: 0;
+
+    width: auto;
+    height: auto;
+
+    float: left;
+}
+
+#UserImageCropModal .user-image-crop-modal-section .user-image-crop-modal-content .user-image-crop-modal-actions .help span {
+    position: relative;
+    display: inline-block;
+
+    margin: 0;
+    padding: 4px 0;
+
+    color: #4e5665;
+    font-size: 12px;
+    line-height: 16px;
+}
+
+#UserImageCropModal .user-image-crop-modal-section .user-image-crop-modal-content .user-image-crop-modal-actions .buttons {
+    position: relative;
+    display: block;
+
+    margin: 0;
+    padding: 0;
+
+    width: auto;
+    height: auto;
+
+    float: right;
+
+    text-align: right;
+}
+
+#UserImageCropModal .user-image-crop-modal-section .user-image-crop-modal-content .user-image-crop-modal-actions .buttons .help {
+    position: relative;
+    display: inline-block;
+
+    margin: 4px 8px 0 0;
+    padding: 0;
+
+    background-image: url('../../CContent/images/Website/facebook/everyone.png');
+    background-position: 0 0;
+    background-repeat: no-repeat;
+
+    width: 16px;
+    height: 16px;
+
+    vertical-align: middle;
+}
+
+#UserImageCropModal .user-image-crop-modal-section .user-image-crop-modal-content .user-image-crop-modal-actions .buttons .button.cancel {
+    position: relative;
+    display: inline-block;
+
+    margin: 0;
+    padding: 8px 20px;
+
+    /* border-top: 1px solid #cccccc;
+    border-right: 1px solid #c5c6c8;
+    border-bottom: 1px solid #b6b7b9;
+    border-left: 1px solid #c5c6c8; */
+
+    border-radius: 7px;
+
+    background-color: #f6f7f8;
+    background-image: url('../../CContent/images/Website/facebook/wL6VQj7Ab77.png');
+    background-position: 0 -21px;
+    background-repeat: repeat-x;
+
+    box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+
+    box-sizing: content-box;
+
+    width: auto;
+    height: auto;
+
+    vertical-align: middle;
+
+    color: #000;
+    font-size: 16pt;
+    line-height: 22px;
+    font-family: "Open Sans";
+
+    text-shadow: 0 1px 0 #fff;
+
+    text-align: center;
+    text-decoration: none;
+}
+
+#UserImageCropModal .user-image-crop-modal-section .user-image-crop-modal-content .user-image-crop-modal-actions .buttons .button.cancel:active {
+    border-color: #ccc;
+
+    background-position: 0 -178px;
+}
+
+#UserImageCropModal .user-image-crop-modal-section .user-image-crop-modal-content .user-image-crop-modal-actions .buttons .button.save {
+    position: relative;
+    display: inline-block;
+
+    margin: 0 0 0 4px;
+    padding: 8px 20px;
+
+    border-radius: 7px;
+
+    background-image: -webkit-linear-gradient(#d96250 0px, #d1333b 50%);
+    background-image: -moz-linear-gradient(#d96250 0px, #d1333b 50%);
+    background-image: -ms-linear-gradient(#d96250 0px, #d1333b 50%);
+    background-image: -o-linear-gradient(#d96250 0px, #d1333b 50%);
+
+    box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+
+    box-sizing: content-box;
+
+    width: auto;
+    height: auto;
+
+    vertical-align: middle;
+
+    color: #fff;
+    font-size: 16pt;
+    line-height: 22px;
+    font-family: "Open Sans";
+
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, .2);
+
+    text-align: center;
+    text-decoration: none;
+}
+
+#UserImageCropModal .user-image-crop-modal-section .user-image-crop-modal-content .user-image-crop-modal-actions .buttons .button.save:active {
+    background-position: 0 -492px;
+}
+
+#UserImageCropModal .user-image-crop-modal-section .user-image-crop-modal-content .user-image-crop-modal-actions .status {
+    position: relative;
+    display: block;
+
+    margin: 0;
+    padding: 0;
+
+    width: auto;
+    height: auto;
+
+    float: right;
+
+    text-align: right;
+}
+
+#UserImageCropModal .user-image-crop-modal-section .user-image-crop-modal-content .user-image-crop-modal-actions .status span {
+    position: relative;
+    display: inline-block;
+
+    margin: 0;
+    padding: 4px 0;
+
+    color: #4e5665;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 16px;
+}
+
+@media (max-width: 480px) {
+    #UserImageCropModal .user-image-crop-modal-section {
+        margin: 0 auto;
+
+        width: 320px;
+    }
+
+    #UserImageCropModal .user-image-crop-modal-section .user-image-crop-modal-content .user-image-crop {
+        padding: 20px 40px 52px;
+
+        height: 342px;
+    }
+
+    #UserImageCropModal .user-image-crop-modal-section .user-image-crop-modal-content .user-image-crop .user-image-crop-section {
+        width: 240px;
+        height: 240px;
+    }
+
+    #UserImageCropModal .user-image-crop-modal-section .user-image-crop-modal-content .user-image-crop .user-image-crop-section .user-image-crop-section-objective {
+        width: 240px;
+        height: 240px;
+    }
+
+    #UserImageCropModal .user-image-crop-modal-section .user-image-crop-modal-content .saving {
+        height: 342px;
+    }
+}
+
+@media (max-height: 480px) {
+    #UserImageCropModal .user-image-crop-modal-section {
+        margin: 0 auto;
+    }
+
+    #UserImageCropModal .user-image-crop-modal-section .user-image-crop-modal-content {
+        min-height: 270px;
+    }
+
+    #UserImageCropModal .user-image-crop-modal-section .user-image-crop-modal-content .user-image-crop {
+        padding: 20px 40px;
+
+        height: 210px;
+    }
+
+    #UserImageCropModal .user-image-crop-modal-section .user-image-crop-modal-content .user-image-crop .user-image-crop-section {
+        width: 150px;
+        height: 150px;
+    }
+
+    #UserImageCropModal .user-image-crop-modal-section .user-image-crop-modal-content .user-image-crop .user-image-crop-section .user-image-crop-section-objective {
+        width: 150px;
+        height: 150px;
+    }
+
+    #UserImageCropModal .user-image-crop-modal-section .user-image-crop-modal-content .user-image-crop .user-image-crop-thumb {
+        top: -42px;
+
+        z-index: 10;
+    }
+
+    #UserImageCropModal .user-image-crop-modal-section .user-image-crop-modal-content .user-image-crop .user-image-crop-slider-section {
+        top: -50px;
+    }
+}

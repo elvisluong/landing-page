@@ -1,0 +1,257 @@
+var LANG = 'eg';
+var I18n = {
+    page_not_found : 'تعذر العثور على الصفحة',
+    header : 'بواسطة Mobiclix LCC',
+    back : 'العودة',
+    titles: {
+        
+        not_found : 'تعذر العثور على الصفحة',
+        mocovids : 'Mocovids',
+        flow1 : 'Mocovids',
+        flow2 : 'Mocovids تَدَفُّق 2',
+        flow3 : 'Mocovids تَدَفُّق 3',
+        flow4 : 'Mocovids تَدَفُّق 4',
+        signup : 'تسجيل',
+        signin : 'تسجيل الدخول',
+        complete : 'أكمل إنشاء الملف الشخصي',
+        close : 'أغلق الانخراط',
+        upload : 'UPLOAD VIDEOS',
+        favorites: 'Favourites',
+        forgotPassword1 : 'نسيت كود التعريف الشخصي',
+        forgotPassword2 : 'إعداد كود تعريف شخصي جديد',
+        movie_list : 'لائحة الأفلام',
+        movie_detail : 'تفاصيل الفيلم',
+        home_page : 'الرئيسية',
+        nouser : 'تعذر العثور على المستخدم',
+        blocked : 'تم حظر حسابك',
+        profile : 'ملفي الشخصي',
+        editProfile : 'تعديل ملفي الشخصي',
+        search : 'بحث في النتائج',
+        category: 'فئة',
+        privacy : 'سياسة الخصوصية',
+        terms: 'الأحكام والشروط',
+        buttontitle: 'رئيسي',
+        //new lang titles
+        settings: 'الإعدادات',
+        ucancel: 'إلغاء الاشتراك'
+    },
+    labels : {
+        email : 'بريد إلكتروني',
+        password : 'كود التعريف الشخصي',
+        phone : 'رقم الهاتف',
+        join : 'تأكيد مشاركتها',
+        join2 : 'تأكيد مشاركتها',
+        join3 : 'اشترك',
+        join4 : 'تأكيد الاشتراك',
+        login : 'تسجيل الدخول',
+        age: 'العمر',
+        create_profile: 'إنشاء ملف شخصي',
+        finish_profile: 'أكمل إنشاء الملف الشخصي',
+        or: 'أو',
+        rated: 'تقييم: ',
+        text_above_button: '<p>للحصول على دعم الاتصال بنا على العنوان التالي:support@centili.com</p>',
+        text_above_button2: '<p>هذه خدمة اشتراك.</p>',
+        text_above_button3: '<p>السعر هو 2 جنيه يوميا</p>',
+        text_above_button11: '<p>هذه الخدمة تعمل بالاشتراك</p>',
+        text_above_button12: '<p>تكلفةالاشتراك2LE  فى اليوم  <p>',
+        text_above_button13: '<p>سعر الخدمة5 جنيه فى الاسبوع </p>',
+        text_above_button14: '<p>Orange</p>',
+        text_above_button15: '<p>انقر على الرابط المزود في الرسالة النصية</p>',
+        text_above_button16: '<p>لالغاء الاشتراك</p>',
+        cancel: 'الغاء',
+        text_above_button17: '<p>خدمة العملاءsupport@centili.com</p>',
+        home_page: 'الصفحة الرئيسية',
+        empty_search : 'عفوا، لا توجد نتائج لطلب بحثك',
+        you_unsubscribe: 'لقد إلغاء بنجاح معاملتك',
+        common : {
+            mocoplay : 'Mocovids أفلام غير محدودة',
+            already : 'هل تتوفر مسبقا على حساب؟',
+            signid : 'تسجيل الدخول',
+            login_via : 'أو تسجيل الدخول بواسطة ',
+            fb : 'فايسبوك'
+        },
+        flow1 : {
+            description : '<p><i>اِلعب الآن مئات الألعاب! لوقت غير محدود، ومن دون إعلانات!، ألعاب جديدة أسبوعيا!</i></p>'+
+                '<p>اِنضم إلى المتعة الآن!</P>',
+            game_title_1 : 'Fruit break',
+            game_title_2 : 'Flappy bird',
+            game_title_3 : 'Jewel blaster',
+            game_desc_1 : 'تطبيق لعبة رائع لتسلية نفسك في الصف',
+            under_pfi : '<p>هذه خدمة اشتراك.</p>\n\
+                <p>السعر هو 2 جنيه يوميا\n\
+                    اِنضم إلى MocoVids ألعاب غير محدودة بمبلغ 2 جنيه مصري في اليوم، حتى ترسل كلمة STOP 323 في رسالة نصية قصيرة إلى الرقم 7785.(Vodafone)\n\
+                    انقر على الرابط يبدأ في رسالة نصية(Mobinil)</p>'
+        },
+        flow3 : {
+            subscribe : 'اِشترك في Mocovids مقابل 4,50&pound; شهريا.',
+            how_work : 'كيف يعمل هذا؟'
+        },
+        add_flow_text_top : 'اِلعب ألعابا غير محدودة HTML5 - من دون حد',
+        add_flow_text_bottom : '<p>هذه خدمة اشتراك.</p>\n\
+                <p>السعر هو 2 جنيه يوميا\n\
+                    اِنضم إلى MocoVids ألعاب غير محدودة بمبلغ 2 جنيه مصري في اليوم، حتى ترسل كلمة STOP 323 في رسالة نصية قصيرة إلى الرقم 7785.(Vodafone)\n\
+                    انقر على الرابط يبدأ في رسالة نصية(Mobinil)</p>',
+        signup : {
+            enter_email_address : 'أدخل بريدك الإلكتروني',
+            enter_username : 'أدخل اسم المستخدم',
+            age : 'العمر',
+            choose_pin : 'اِختر رقم تعريف شخصي من 4 أرقام (4 أرقام فقط تعتبر كودا مناسبا)',
+            choose_password : 'كود التعريف الشخصي',
+            birthdate : 'أدخل تاريخ ميلادك',
+            re_enter_password : 'أعد إدخال كود تعريفك الشخصي',
+            remember_me : 'تذكرني',
+            enter : 'دخول',
+            signin : 'تسجيل الدخول',
+            finish : 'إنهاء',
+            fb : 'كاملة مع الفيسبوك',
+            main : 'الصفحة الرئيسية',
+            signup : 'اشتراك',
+            forgot_password : 'نسيت كود التعريف الشخصي',
+            sign_facebook : 'تسجيل الدخول بواسطة فايسبوك',
+            enter_phone : 'رقم الهاتف',
+            never_post : 'نحن لن ننشر أبدا أي شيء على خطك الزمني!',
+            have_no_account : 'ليس لديك حساب؟',
+            already_have_account: '<p style="margin-top: -10px;">اِنضم إلى MocoVids ألعاب غير محدودة بمبلغ 2 جنيه مصري في اليوم، حتى ترسل كلمة STOP 325 في رسالة نصية قصيرة إلى الرقم 7785.(Vodafone)</p>',
+            already_have_account4: '<p style="margin-top: -10px;"> حتى ترسل كلمة STOP 325 في رسالة نصية قصيرة إلى الرقم 7785.(Vodafone)</p>',
+            already_have_account2: '<p style="margin-top: -10px;">انقر على الرابط يبدأ في رسالة نصية(Mobinil)</p>',
+            already_have_account3: '<p style="font-size: 21px;">تتوفر مسبقا على حساب؟</p>',
+            dont_know_phone: 'لا تعرف رقم هاتفك؟'
+        },
+        complete: {
+            enter_phone : 'أدخل رقم هاتفك',
+            check: 'تحقق',
+            checking: 'جاري التحقق...'
+        },
+        menu : {
+            i_am_look : ' ',
+            follow_us : 'تابعنا'
+        },
+        close : {
+            title : 'إنهاء الاشتراك',
+            content : 'هل أنت متأكد أنك تريد إنهاء الاشتراك؟',
+            yes : 'متأكد',
+            no : 'إلغاء',
+            err_message : 'حدث خطأ ما على الخادم. يرجى معاودة المحاولة لاحقا',
+            phone_message : 'رقم الهاتف غير صحيح'
+        },
+        movieList : {
+            new_games : 'ألعاب جديدة',
+            recomended : 'موصى به',
+            see_more : 'رؤية المزيد',
+            popular : 'شعبي',
+            newest: 'جديد',
+            mostwatched: 'الأكثر مشاهدة',
+            emptyCat: 'ليس هناك من أفلام في هذه الفئة'
+        },
+        forgot_password : {
+            next : 'التالي',
+            enter_email_address : 'أدخل بريدك الإلكتروني',
+            password : 'اختر كود التعريف الشخصي',
+            reenter_password : 'أعد إدخال كود التعريف الشخصي'
+        },
+        profile : {
+            welcome : 'مرحبا',
+            settings : 'إعدادات',
+            recommended_games : 'الألعاب الموصى بها',
+            recently_played : 'الألعاب التي تم لعبها مؤخرا',
+            password_not_identity : 'يجب أن يكون كود التعريف الشخصي وتأكيد كود التعريف الشخصي متطابقين',
+            data_saved : 'تم حفظ المعلومات',
+            age: 'عمر',
+            
+            upload_photo : 'رفع الصورة',
+            profile : 'ملف شخصي',
+            username : 'اسم المستخدم',
+            email : 'بريد إلكتروني:',
+            change_password : 'تغيير كود التعريف الشخصي',
+            re_entered_password : 'كود التعريف الشخصي المعاد إدخاله',
+            location : 'الموقع',
+            city : 'المدينة:',
+            postal : 'الرمز البريدي',
+            country : 'الدولة:',
+            save_button : 'قم بالحفظ ثم العودة إلى الصفحة الرئيسية',
+            save_button_process : 'جاري الحفظ...'
+        },
+        movie_detail : {
+            add_favorite : 'أضف إلى المفضلة',
+            remove_favorite : 'إزالة من المفضلة',
+            description : 'وصف:',
+            post : 'نشر',
+            related : 'ذو علاقة',
+            movie_not_found : 'الفيلم لم يتم العثور',
+            rate : 'تقييم هذه اللعبة',
+            comment_show_more : 'المزيد من التعليقات',
+            comment_big_text : 'يجب أن يكون عدد حروف التعليق ما بين 1 إلى 300 حرف',
+            yourcomment: 'تعليقك'
+        }
+    },
+    errors : {
+        internal : 'خطأ في الخادم. يرجى المحاولة مرة أخرى في وقت لاحق',
+        no_iframe : 'خطأ مع بوابة الدفع. يرجى مراسلة المشرف.',
+        max_search : 'الحد الأقصى للطول هو 40 حرفا'
+    },
+    messages : {
+        passwords_do_not_match : 'كود التعريف الشخصي غير متوافق',
+        password_changed : 'يجب تحديد كود تعريف شخصي جديد',
+        check_email : 'يرجى التحقق في بريدك الإلكتروني',
+        games_not_found : 'لم يتم إيجاد الألعاب',
+        payment_1 : 'إرسال البيانات...',
+        payment_2 : 'جاري الحصول على إجابة من الخادم...',
+        payment_3 : 'جاري التحقق من معلومات الدفع...',
+        check_email_for_password : 'يرجى التحقق في بريدك الإلكتروني'
+    },
+    texts : {
+        nouser : 'لم تقم بالتسجيل.',
+        blocked : 'تم حظر حسابك.'
+    },
+    menu : {
+        1 : {title : 'كافة الحيوانات', 'url' : 'animals'},
+        2 : {title : 'غريبة ومذهلة', 'url' : 'bizzare'},
+        3 : {title : 'صور مذهلة', 'url' : 'pictures'},
+        4 : {title : 'أفلام مجانية', 'url' : 'movies'},
+        5 : {title : 'العاب', 'url' : 'gaming'},
+        6 : {title : 'عاطفية', 'url' : 'heartwarming'},
+        7 : {title : 'تم إرسالها للتو', 'url' : 'submitted'},
+        //8 : {title : 'Pokemon GO', 'url' : 'pokemon_go'},
+        8 : {title : 'رياضات', 'url' : 'sports'},
+        9 : {title : 'طعام', 'url' : 'food'},
+        10 : {title : 'مسافر', 'url' : 'travelling'},
+        11 : {title : 'اللياقه البدنيه', 'url' : 'fitness'},
+        12 : {title : 'جمال', 'url' : 'beauty'},
+        13 : {title : 'تكنولوجيا', 'url' : 'technology'},
+        14 : {title : 'Staff Picks', 'url' : 'staff'},
+        15 : {title : 'إعلانات الأفلام والكليبات', 'url' : 'trailers'}
+//        7 : {title : 'فيديوهات جد مسلية', 'url' : 'funny'},
+//        10 : {title : 'تقاسم المزحة', 'url' : 'prunk'},
+    },
+    //new lang mocovids
+    layout : {
+        privatPolicy : 'سياسة الخصوصية',
+        termsOfService : 'شروط الخدمة',
+        and: 'و'
+    },
+    profile : {
+        settings : 'إعدادات',
+        age : 'العمر: ',
+        recentlyVideos : 'الفيديوهات التي تم تشغيلها مؤخرا',
+        recommendedVideo: 'الفيديوهات الموصى بها'
+    },
+    settings : {
+        main : 'إعدادات الملف الشخصي',
+        location : 'إعدادات الموقع',
+        userName : 'اسم المستخدم',
+        email : 'بريد إلكتروني',
+        password : 'كود التعريف الشخصي',
+        passwordConfirm : 'تأكيد كود التعريف الشخصي',
+        city : 'المدينة',
+        age : 'العمر: ',
+        postal : 'الرمز البريدي',
+        country : 'الدولة',
+        save : 'حفظ الإعدادات',
+        editPhoto : 'تحميل صورة رمزية جديدة',
+        editBackground : 'تحميل خلفية جديدة'
+    },
+    sidebar : {
+        exit : 'خروج',
+        follow : 'تابعنا'
+    }
+};

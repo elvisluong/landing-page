@@ -1,0 +1,333 @@
+#UserImageUploadProgressModal {
+    background: rgba(0, 0, 0, .4);
+}
+
+#UserImageUploadProgressModal .user-image-upload-progress-section {
+    position: relative;
+    display: block;
+
+    margin: 246px auto 40px;
+    padding: 0;
+
+    border-radius: 3px;
+    box-shadow: 0 2px 26px rgba(0, 0, 0, .3), 0 0 0 1px rgba(0, 0, 0, .1);
+
+    background: #fff;
+
+    width: 520px;
+    height: auto;
+
+    color: #141823;
+    font-weight: normal;
+    font-variant: normal;
+    font-style: normal;
+    font-size: 12px;
+    line-height: 1.34;
+    font-family: helvetica, arial, sans-serif;
+}
+
+#UserImageUploadProgressModal .user-image-upload-progress-section .user-image-upload-progress-header {
+    position: relative;
+    display: block;
+
+    margin: 0;
+    padding: 10px 12px;
+
+    border-bottom: 1px solid #e5e5e5;
+    border-radius: 3px 3px 0 0;
+
+    background-color: #f6f7f8;
+
+    width: auto;
+    height: auto;
+
+    color: #4e5665;
+    font-weight: bold;
+    line-height: 19px;
+}
+
+#UserImageUploadProgressModal .user-image-upload-progress-section .user-image-upload-progress-header .title {
+    position: relative;
+    display: inline-block;
+
+    margin: 0;
+    padding: 0;
+
+    width: auto;
+    height: auto;
+
+    float: left;
+}
+
+#UserImageUploadProgressModal .user-image-upload-progress-section .user-image-upload-progress-header .title span {
+    position: relative;
+    display: inline-block;
+
+    margin: 0;
+    padding: 0;
+
+    font-size: 14px;
+    line-height: 19px;
+}
+
+#UserImageUploadProgressModal .user-image-upload-progress-section .user-image-upload-progress-header .actions {
+    position: relative;
+    display: inline-block;
+
+    margin: 0;
+    padding: 0;
+
+    width: auto;
+    height: auto;
+
+    float: right;
+
+    line-height: 19px;
+}
+
+#UserImageUploadProgressModal .user-image-upload-progress-section .user-image-upload-progress-header .actions .action {
+    position: relative;
+    display: inline-block;
+
+    margin: 4px 0 0;
+    padding: 0;
+
+    opacity: 1;
+
+    width: 12px;
+    height: 12px;
+}
+
+#UserImageUploadProgressModal .user-image-upload-progress-section .user-image-upload-progress-header .actions .action.close {
+
+    background-image: url('/CContent/images/Website/sprites/app-sprite3.png');
+    background-position: -119px -451px;
+    background-repeat: no-repeat;
+    background-size: auto;
+}
+
+#UserImageUploadProgressModal .user-image-upload-progress-section .user-image-upload-progress-header .actions .action.close:hover {
+    background-position: -145px -451px;
+}
+
+#UserImageUploadProgressModal .user-image-upload-progress-section .user-image-upload-progress-content {
+    position: relative;
+    display: block;
+
+    margin: 0;
+    padding: 0;
+
+    border-radius: 0 0 3px 3px;
+
+    background-color: #fff;
+
+    width: auto;
+
+    height: auto;
+
+    font-size: 14px;
+    line-height: 18px;
+}
+
+#UserImageUploadProgressModal .user-image-upload-progress-section .user-image-upload-progress-content .user-image-upload-progress {
+    position: relative;
+    display: block;
+
+    margin: 0;
+    padding: 0;
+
+    background-color: #f2f2f2;
+
+    width: auto;
+    height: 75px;
+}
+
+@-webkit-keyframes -webkit-rotateSpinner {
+    0% {
+        -webkit-transform: rotate(0deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@-moz-keyframes -moz-rotateSpinner {
+    0% {
+        -moz-transform: rotate(0deg);
+    }
+
+    100% {
+        -moz-transform: rotate(360deg);
+    }
+}
+
+@-o-keyframes -o-rotateSpinner {
+    0% {
+        -o-transform: rotate(0deg);
+    }
+
+    100% {
+        -o-transform: rotate(360deg);
+    }
+}
+
+@-ms-keyframes -ms-rotateSpinner {
+    0% {
+        -ms-transform: rotate(0deg);
+    }
+
+    100% {
+        -ms-transform: rotate(360deg);
+    }
+}
+
+@keyframes rotateSpinner {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+#UserImageUploadProgressModal .user-image-upload-progress-section .user-image-upload-progress-content .user-image-upload-progress .preloader {
+    position: absolute;
+    display: inline-block;
+
+    margin: 0;
+    padding: 0;
+
+    background-image: url('/CContent/images/Website/sprites/app-sprite4.png');
+    background-position: 0 0;
+    background-repeat: no-repeat;
+
+    -webkit-animation: -webkit-rotateSpinner 1.2s linear infinite running;
+    -moz-animation: -moz-rotateSpinner 1.2s linear infinite running;
+    -o-animation: -o-rotateSpinner 1.2s linear infinite running;
+    -ms-animation: -ms-rotateSpinner 1.2s linear infinite running;
+    animation: rotateSpinner 1.2s linear infinite running;
+
+    top: -webkit-calc(50% - 12px);
+    top: -moz-calc(50% - 12px);
+    top: -o-calc(50% - 12px);
+    top: -ms-calc(50% - 12px);
+    top: calc(50% - 12px);
+
+    left: -webkit-calc(50% - 12px);
+    left: -moz-calc(50% - 12px);
+    left: -o-calc(50% - 12px);
+    left: -ms-calc(50% - 12px);
+    left: calc(50% - 12px);
+
+    width: 24px;
+    height: 24px;
+}
+
+#UserImageUploadProgressModal .user-image-upload-progress-section .user-image-upload-progress-content .user-image-upload-progress .progress {
+    position: relative;
+    display: block;
+
+    margin: 0 20px;
+    padding: 0;
+
+    border-top: 1px solid #a4a4a4;
+    border-right: 1px solid #bbb;
+    border-bottom: 1px solid #d5d5d5;
+    border-left: 1px solid #bbb;
+
+    border-radius: 15px;
+
+    background-color: #fff;
+
+    top: -webkit-calc(50% - 5px);
+    top: -moz-calc(50% - 5px);
+    top: -o-calc(50% - 5px);
+    top: -ms-calc(50% - 5px);
+    top: calc(50% - 5px);
+
+    height: 10px;
+}
+
+#UserImageUploadProgressModal .user-image-upload-progress-section .user-image-upload-progress-content .user-image-upload-progress .progress-bar {
+    border: 1px solid #ff0000;
+    border-radius: 15px;
+
+    background-color: #ff5616;
+}
+
+#UserImageUploadProgressModal .user-image-upload-progress-section .user-image-upload-progress-content .user-image-upload-progress-actions {
+    position: relative;
+    display: block;
+
+    margin: 0 12px;
+    padding: 12px 0;
+
+    border-top: 1px solid #dcdee3;
+
+    background-color: #fff;
+
+    width: auto;
+    height: auto;
+}
+
+#UserImageUploadProgressModal .user-image-upload-progress-section .user-image-upload-progress-content .user-image-upload-progress-actions .buttons {
+    position: relative;
+    display: block;
+
+    margin: 0;
+    padding: 0;
+
+    width: auto;
+    height: auto;
+
+    float: right;
+
+    text-align: right;
+}
+
+#UserImageUploadProgressModal .user-image-upload-progress-section .user-image-upload-progress-content .user-image-upload-progress-actions .buttons .button.cancel {
+    position: relative;
+    display: inline-block;
+
+    margin: 0;
+    padding: 8px 20px;
+
+    /* border-top: 1px solid #cccccc;
+    border-right: 1px solid #c5c6c8;
+    border-bottom: 1px solid #b6b7b9;
+    border-left: 1px solid #c5c6c8; */
+
+    border-radius: 7px;
+
+    background-color: #f6f7f8;
+    background-image: url('../../CContent/images/Website/facebook/wL6VQj7Ab77.png');
+    background-position: 0 -21px;
+    background-repeat: repeat-x;
+
+    box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+
+    box-sizing: content-box;
+
+    width: auto;
+    height: auto;
+
+    vertical-align: middle;
+
+    color: #000;
+    font-size: 16pt;
+    line-height: 22px;
+    font-family: "Open Sans";
+
+    text-shadow: 0 1px 0 #fff;
+
+    text-align: center;
+    text-decoration: none;
+}
+
+#UserImageUploadProgressModal .user-image-upload-progress-section .user-image-upload-progress-content .user-image-upload-progress-actions .buttons .button.cancel:active {
+    border-color: #ccc;
+
+    background-position: 0 -178px;
+}
