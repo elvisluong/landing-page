@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body style="margin: 0;">
+    <div style="margin: auto; padding: 0; max-width: 480px; height: 100vh;
+                display: flex; justify-content: center; align-items: center;
+                background-image: url(./flow2-uk.gif); background-size: cover; background-repeat: no-repeat">
+        <div class="button" style="width: 100%; text-align: center">
+            <img src="./button.png" class="src" style="width: 250px;" onclick="redirect()" />
+        </div>
+    </div>
+    <script>
+        function getParameterByName(name, url) {
+            if (!url) url = window.location.href;
+            name = name.replace(/[\[\]]/g, "\\$&");
+            var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+                results = regex.exec(url);
+            if (!results) return null;
+            if (!results[2]) return '';
+            return decodeURIComponent(results[2].replace(/\+/g, " "));
+        }
+
+        function redirect() {
+            var subid = getParameterByName("subid");
+            var source = getParameterByName("source");
+            if (!source || !subid) {
+                window.location = "http://mocogateway.com/pg/fonix/init/uk_mp?image=http%3A%2F%2F4737dd746e4001ae7916-d220f9c1b2d52c85bf2d38326ce765d0.r32.cf6.rackcdn.com%2Fmocogateway%2Fflow2-pfi.jpg";
+            } else {
+                window.location = "http://mocogateway.com/pg/fonix/init/uk_mp?image=http%3A%2F%2F4737dd746e4001ae7916-d220f9c1b2d52c85bf2d38326ce765d0.r32.cf6.rackcdn.com%2Fmocogateway%2Fflow2-pfi.jpg&subid=" + subid + "&source=" + source;
+            }
+        }
+    </script>
+</body>
+
+
+</html>

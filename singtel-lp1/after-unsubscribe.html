@@ -22,7 +22,6 @@
             position: relative;
             background-size: cover;
             overflow-y: scroll;
-            display: none;
         }
         
         .content {
@@ -120,84 +119,39 @@
             border-radius: 10px;
             box-shadow: 1px 1px 0px rgba(117, 110, 58, 0.98);
         }
-        /* --------------------------- prelander style below --------------------------------- */
+        /* -------------- unsubscribe section --------------- */
         
-        .prelander {
-            position: relative;
-            height: 100vh;
-            z-index: 999;
-            width: 100%;
-            max-width: 768px;
-            background: url('./img/sg-pre-rope-v2.gif');
-            background-repeat: no-repeat;
-            background-size: cover;
+        .dragon-icon img {
+            height: 70px;
         }
         
-        .prelander-disclaimer {
-            position: absolute;
-            bottom: 0;
-            text-align: center;
+        .unsub-question {
+            padding: 15px 0;
+            font-size: 22px;
         }
         
-        .prelander-btn {
-            text-align: center;
-            position: absolute;
-            transform: translate;
-            transform: translate(-50%, -50%);
-            top: 70%;
-            left: 50%;
-        }
-        
-        .prelander p {
-            margin: 0;
-            padding: 10px;
-            font-size: 14px;
-            color: #fff;
+        .unsub-txt {
+            font-size: 12px;
         }
     </style>
 </head>
 
 <body>
-    <!-- <img src="./img/sg-after-pin-rope.png" alt="subscribe now" style="display: none" /> -->
-    <div class="prelander">
-        <div class="prelander-btn">
-            <img src="./img/continue-btn.png" alt="Continue">
-        </div>
-        <div class="prelander-disclaimer">
-            <p> Subscribe to <span style="font-weight: bold">Mocoplay</span> and enjoy unlimited access to <span style="font-weight: bold">500+ premium games</span> without any disturbing ads. New games are updated every week for you. You can stop by clicking
-                the unsubscribe link in your Telcom SMS. License in the name of MobiClix Pte LTD. Copyright © 2017.</p>
-            <!-- <p> Standard operator and data charges apply. Charges for Singtel prepaid customers will be deducted via Singtel Dash. Premium services are not available to Starhub prepaid subscribers.</p>
-            <p> WAP/GPRS-enabled phone required. A person under 18 years of age must have a bill payer’s permission to subscribe to the service. Trademarks, service marks, logo (including, without limitation, the individual names of products and retailers)
-                are the property of their respective owners.</p>
-            <p>For help, please call hotline: (65)63387005 or send an email to <a style="color: #000" href="mailto:support.sg@macrokiosk.com">support.sg@macrokiosk.com</a></p>
-            <p>Operating Hours: Mon-Fri except Public Holiday, 9am – 6pm</p>
-            <p> Powered by Macro Kiosk Pte Ltd </p> -->
-        </div>
-    </div>
     <div class="container">
         <div class="content">
             <div class="modal-container">
                 <div class="background"></div>
                 <div class="modal-content">
-                    <div class="modal-price">
-                        You will be charged $8.56 (wGST) per week to your mobile account and your subscription will be renewed automatically.
+                    <div class="dragon-icon">
+                        <img src="./img/before-unsub-dragon.png" alt="">
                     </div>
-                    <div class="modal-captcha">
-                        <span id="captcha-num">3825</span>
+                    <div class="unsub-question">
+                        See you again!
                     </div>
-                    <div class="modal-input">
-                        <p>Tap the <b>number</b> you see to activate the subcription</p>
-                        <input id="captcha-input" type="tel" maxlength="4" placeholder="****" />
-                        <span class="fake-input"></span>
-                    </div>
-                    <div id="modal-btn">
-                        <img src="./img/sg-before-pin-rope.png" alt="subscribe now" />
-                    </div>
-                    <div class="modal-reminder">
-                        <p>By clicking Subscribe Now you will be charged to your mobile account $8.56 (wGST) per week.</p>
-                    </div>
-                    <div class="modal-cancel">
-                        <span>CANCEL</span>
+                    <div class="unsub-txt">
+                        You've successfully to
+                        <span style="color: #007de4">Mocoplay-Unlimited Games.</span>. It's hard to say goodbye, we hope that you had fun with
+                        <span style="color: #007de4">Mocoplay</span>. Come back soon!
                     </div>
                 </div>
             </div>

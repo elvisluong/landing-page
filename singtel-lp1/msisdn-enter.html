@@ -1,13 +1,15 @@
-<!doctype html>
-<html class="no-js" lang="">
+<!DOCTYPE html>
+<!-- saved from url=(0092)http://mocogateway.com/pg/macrokiosk/msisdn-enter?RefId=aaf0ddc9-858c-4e6a-867a-043c10fc2201 -->
+<html lang="">
 
 <head>
-    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title></title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://fonts.googleapis.com/css?family=Signika" rel="stylesheet">
+    <link href="./msisdn-enter_files/css" rel="stylesheet">
 
     <style>
         body {
@@ -18,7 +20,7 @@
         .container {
             max-width: 768px;
             height: 100vh;
-            background-image: url("./img/sg-bg-rope.png");
+            background-image: url("http://4737dd746e4001ae7916-d220f9c1b2d52c85bf2d38326ce765d0.r32.cf6.rackcdn.com/mocogateway/sg-bg-rope.jpg");
             position: relative;
             background-size: cover;
             overflow-y: scroll;
@@ -26,7 +28,7 @@
         }
         
         .content {
-            min-height: 80%;
+            min-height: 510px;
         }
         
         .footer {
@@ -76,10 +78,15 @@
             border-radius: 8px;
         }
         
+        .modal-input {
+            margin: 20px 0;
+        }
+        
         .modal-input input[type=tel] {
             box-sizing: border-box;
             border-radius: 3px;
-            width: 65px;
+            width: 183px;
+            height: 34px;
             text-align: center;
             border-radius: 6px;
         }
@@ -90,13 +97,13 @@
         }
         
         #modal-btn {
-            width: 170px;
+            width: 190px;
             margin: auto;
             margin-top: 10px;
             cursor: pointer;
         }
         
-        #modal-btn img {
+        #modal-btn input[type=image] {
             width: 100%;
         }
         
@@ -120,7 +127,6 @@
             border-radius: 10px;
             box-shadow: 1px 1px 0px rgba(117, 110, 58, 0.98);
         }
-        /* --------------------------- prelander style below --------------------------------- */
         
         .prelander {
             position: relative;
@@ -128,7 +134,7 @@
             z-index: 999;
             width: 100%;
             max-width: 768px;
-            background: url('./img/sg-pre-rope-v2.gif');
+            background: url('http://4737dd746e4001ae7916-d220f9c1b2d52c85bf2d38326ce765d0.r32.cf6.rackcdn.com/mocogateway/sg-pre-rope-v2.gif');
             background-repeat: no-repeat;
             background-size: cover;
         }
@@ -158,95 +164,56 @@
 </head>
 
 <body>
-    <!-- <img src="./img/sg-after-pin-rope.png" alt="subscribe now" style="display: none" /> -->
     <div class="prelander">
         <div class="prelander-btn">
-            <img src="./img/continue-btn.png" alt="Continue">
+            <img src="./msisdn-enter_files/continue-btn.png" alt="Continue">
         </div>
         <div class="prelander-disclaimer">
             <p> Subscribe to <span style="font-weight: bold">Mocoplay</span> and enjoy unlimited access to <span style="font-weight: bold">500+ premium games</span> without any disturbing ads. New games are updated every week for you. You can stop by clicking
                 the unsubscribe link in your Telcom SMS. License in the name of MobiClix Pte LTD. Copyright © 2017.</p>
-            <!-- <p> Standard operator and data charges apply. Charges for Singtel prepaid customers will be deducted via Singtel Dash. Premium services are not available to Starhub prepaid subscribers.</p>
-            <p> WAP/GPRS-enabled phone required. A person under 18 years of age must have a bill payer’s permission to subscribe to the service. Trademarks, service marks, logo (including, without limitation, the individual names of products and retailers)
-                are the property of their respective owners.</p>
-            <p>For help, please call hotline: (65)63387005 or send an email to <a style="color: #000" href="mailto:support.sg@macrokiosk.com">support.sg@macrokiosk.com</a></p>
-            <p>Operating Hours: Mon-Fri except Public Holiday, 9am – 6pm</p>
-            <p> Powered by Macro Kiosk Pte Ltd </p> -->
         </div>
     </div>
     <div class="container">
         <div class="content">
             <div class="modal-container">
-                <div class="background"></div>
-                <div class="modal-content">
-                    <div class="modal-price">
-                        You will be charged $8.56 (wGST) per week to your mobile account and your subscription will be renewed automatically.
+                <form action="http://mocogateway.com/pg/macrokiosk/msisdn-enter-callback?RefId=aaf0ddc9-858c-4e6a-867a-043c10fc2201" method="post">
+                    <div class="background"></div>
+                    <div class="modal-content">
+                        <div class="modal-price">
+                            You will be charged $8.56 W/GST per week to your mobile account and your subscription will be renewed automatically.
+                        </div>
+                        <div class="modal-input">
+                            <p>Enter your phone number below</p>
+                            <input id="captcha-input" name="msisdn" maxlength="10" minlength="8" type="tel" placeholder="+65">
+                        </div>
+                        <div id="modal-btn">
+                            <input src="./msisdn-enter_files/sg-phone-btn-rope.png" alt="subscribe now" type="image" value="Submit">
+                        </div>
                     </div>
-                    <div class="modal-captcha">
-                        <span id="captcha-num">3825</span>
-                    </div>
-                    <div class="modal-input">
-                        <p>Tap the <b>number</b> you see to activate the subcription</p>
-                        <input id="captcha-input" type="tel" maxlength="4" placeholder="****" />
-                        <span class="fake-input"></span>
-                    </div>
-                    <div id="modal-btn">
-                        <img src="./img/sg-before-pin-rope.png" alt="subscribe now" />
-                    </div>
-                    <div class="modal-reminder">
-                        <p>By clicking Subscribe Now you will be charged to your mobile account $8.56 (wGST) per week.</p>
-                    </div>
-                    <div class="modal-cancel">
-                        <span>CANCEL</span>
-                    </div>
-                </div>
+                </form>
             </div>
         </div>
         <div class="footer">
             <p> Subscribe to <span style="color: #007de4">Mocoplay</span> and enjoy unlimited access to <span style="color: #ca0000">500+ premium games</span> without any disturbing ads. New games are updated every week for you. You can stop by clicking the
-                unsubscribe link in your Telcom SMS. License in the name of MobiClix Pte LTD. Copyright © 2017.
-            </p>
-            <p> Standard operator and data charges apply. Charges for Singtel prepaid customers will be deducted via Singtel Dash. Premium services are not available to Starhub prepaid subscribers.
-            </p>
+                unsubscribe link in your Telcom SMS. License in the name of MobiClix Pte LTD. Copyright © 2017. </p>
+            <p> Standard operator and data charges apply. Charges for Singtel prepaid customers will be deducted via Singtel Dash. Premium services are not available to Starhub prepaid subscribers. </p>
             <p> WAP/GPRS-enabled phone required. A person under 18 years of age must have a bill payer’s permission to subscribe to the service. Trademarks, service marks, logo (including, without limitation, the individual names of products and retailers)
-                are the property of their respective owners.
-            </p>
-            <p>For help, please call hotline: (65)63387005 or send an email to <a style="color: #000" href="mailto:support.sg@macrokiosk.com">support.sg@macrokiosk.com</a>
-            </p>
+                are the property of their respective owners. </p>
+            <p>For help, please call hotline: (65)63387005 or send an email to <a style="color: #000" href="mailto:support.sg@macrokiosk.com">support.sg@macrokiosk.com</a> </p>
             <p>Operating Hours: Mon-Fri except Public Holiday, 9am – 6pm</p>
-            </p>
+            <p></p>
             <p> Powered by Macro Kiosk Pte Ltd </p>
         </div>
     </div>
-
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script src="./msisdn-enter_files/jquery-3.2.1.min.js.download" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
     <script>
-        var captchaNum = (Math.floor(1000 + Math.random() * 9000)).toString();
-        var captchaNumEle = document.getElementById('captcha-num');
-        captchaNumEle.innerHTML = captchaNum;
-        $('#captcha-input').bind('input', function() {
-            var value = $(this).val();
-            if (value === captchaNum) {
-                $('#modal-btn').html('<img src="./img/sg-after-pin-rope.png" alt="subscribe now" id="make-payment" onclick="makePayment()"/>');
-            } else {
-                $('#modal-btn').html('<img src="./img/sg-before-pin-rope.png" alt="subscribe now" />');
-            }
-        });
-
-        function makePayment() {
-            window.location.href = "http://mocogateway.com/pg/macrokiosk/he/sg_mp";
-        }
-
-        $("make-payment").click(function() {
-            $("make-payment").attr('onclick', '');
-        });
-
-        // prelander script
         $('.prelander-btn').click(function() {
             $('.prelander').hide();
             $('.container').show();
         });
     </script>
+
+
 </body>
 
 </html>
