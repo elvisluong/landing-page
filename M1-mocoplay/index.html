@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Mocoplay</title>
+</head>
+
+<body style="margin: 0;">
+    <div style="margin: auto; padding: 0; max-width: 480px; height: 100vh;
+                display: flex; justify-content: center; align-items: center;
+                background-image: url(./rope2.gif); background-size: cover; background-repeat: no-repeat">
+        <div class="button" style="width: 100%; text-align: center; position: relative; display: flex; justify-content: center; height: 72px;">
+            <img src="./btn-joinnow.png" id="btn-join" style="width: 250px; position: absolute" onclick="redirect()" />
+            <img src="./btn-continue.png" id="btn-continue" style="width: 250px; position: absolute; display: none" onclick="makePayment()" />
+        </div>
+    </div>
+    <script>
+        function redirect() {
+            document.getElementById("btn-join").style.display = "none"
+            document.getElementById("btn-continue").style.display = "block"
+        }
+        // convert http://sg.mocoplay.com/lp/flow2/ to Hex
+        // 687474703A2F2F73672E6D6F636F706C61792E636F6D2F6C702F666C6F77322F 
+        // How to test:
+        // follow the flow until redirect to payment (makePayment function)
+        // http://mocogateway.com/pg/macrokiosk/msisdn?Status=Fail&RefId=79962423-9c62-4e95-b1fd-44f2738fe419
+        // Change Status=Success. if it redirect to the current flow, it is correct.
+        function makePayment() {
+            window.location.href = "https://mocogateway.com/pg/macrokiosk/init/sg_mp?source=test&subid=sample&lp=687474703A2F2F73672E6D6F636F706C61792E636F6D2F6C702F666C6F77322F";
+        }
+    </script>
+</body>
+
+
+</html>
