@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Moco4K - Experience 4K video</title>
+    <meta name="description" content="Experience 4K video">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            font-weight: 700;
+        }
+        @font-face {
+                font-family: "Mark";
+                src: url("mark-font.otf")
+        }
+        .notify {
+        margin: 20px auto;
+        height: 40px;
+        text-align: center;
+        font-size: 10px;
+        }
+
+        .notify > div {
+        background-color: #ffffff;
+        height: 100%;
+        width: 6px;
+        display: inline-block;
+        
+        -webkit-animation: sk-stretchdelay 1.2s infinite ease-in-out;
+        animation: sk-stretchdelay 1.2s infinite ease-in-out;
+        }
+
+        .notify .rect2 {
+        -webkit-animation-delay: -1.1s;
+        animation-delay: -1.1s;
+        }
+
+        .notify .rect3 {
+        -webkit-animation-delay: -1.0s;
+        animation-delay: -1.0s;
+        }
+
+        .notify .rect4 {
+        -webkit-animation-delay: -0.9s;
+        animation-delay: -0.9s;
+        }
+
+        .notify .rect5 {
+        -webkit-animation-delay: -0.8s;
+        animation-delay: -0.8s;
+        }
+
+        @-webkit-keyframes sk-stretchdelay {
+        0%, 40%, 100% { -webkit-transform: scaleY(0.4) }  
+        20% { -webkit-transform: scaleY(1.0) }
+        }
+
+        @keyframes sk-stretchdelay {
+        0%, 40%, 100% { 
+            transform: scaleY(0.4);
+            -webkit-transform: scaleY(0.4);
+        }  20% { 
+            transform: scaleY(1.0);
+            -webkit-transform: scaleY(1.0);
+        }
+        }
+
+
+    </style>
+</head>
+<body style="margin: 0; padding: 0; background-color: black;font-family: Mark">
+    <div style="max-width: 480px; width: 100%; height: 100%; margin: auto; 
+                background:url(./img/cocktail-gif.gif);
+                background-repeat: no-repeat;
+                background-size: cover;">
+        <!-- header -->
+        <div style="display: flex; align-items: center; font-size: 12px; background-color: white;">
+            <div class="left-header" style="width: 80%; margin: 10px 0px 10px 10px;;">
+                <p style="margin: 0;">Need help? Call 0330 7772 760</p>
+                <p style="margin: 0;">To cancel send STOP moco4k to 60762</p>
+            </div>
+            <div class="right-header" style="margin: 0;">
+                <a style="
+                    padding: 2px 15px;
+                    margin: auto;
+                    background: #8b8b8b;
+                    border-radius: 5px;
+                    color: white;
+                    text-decoration: none;" 
+                    href="http://www.google.com">Exit</a>
+            </div>
+        </div>
+        <!-- Logo -->
+        <div class="logo" style="text-align: center; margin: 31px 0;">
+            <img src="./img/logo.png" style="width: 145px;" alt="Moco4K Logo" />
+        </div>
+        <!-- banner text -->
+        <div class="banner-text" style="text-align: center;">
+            <img src="./img/banner-text.png" style="width: 220px;" alt="Moco4K Logo" />
+        </div>
+        <!-- text above button -->
+        <div class="billing-info" style="margin-top: 70px; text-align: center; color: white;
+                    font-size: 13px;">
+            <p style="margin: 0;">Free for 24 hours, then £3.00/week.</p>
+            <p style="margin: 0;">Charges added to this mobile's bill.</p>
+        </div>
+        <!-- button -->
+        <div class="button" style="text-align: center; margin-top: 20px;">
+            <img style="width: 80%" src="./img/subscribe-button.png" alt="Subscribe now" id="button-content" onclick="clickBtn()">
+        </div>
+
+        <div class="notify" style="width: 50px">
+        </div>
+        <!-- disclaimer -->
+        <div class="billing-info" style=" text-align: center; color: white;
+                    font-size: 13px;">
+            <p style="margin: 0; margin: 0 10px;">Subscribe and gain access to cooking and cocktail tutorials, yoga classes and much more all in 4K HD.</p>
+        </div>
+        <!-- term & condition -->
+        <div class="billing-info" style="margin: 30px; text-align: center; color: white;
+                font-size: 13px;">
+            <p style="margin: 0;">
+                <a href="#" style="color: white; cursor: pointer;">Terms & Conditions </a> | 
+                <a href="#" style="color: white; cursor: pointer;">Privacy Policy</a> |
+                <a href="#" style="color: white; cursor: pointer;">Login</a> |
+            </p>
+            <p style="margin: 3px;">Service provided by Mobiclix Group.</p>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+        
+    var step = "INIT";
+    var gloginToken = "";
+    var gtempPass = "";
+    
+
+    function clickBtn() {
+        switch(step) {
+        case "INIT":
+            $('#button-content').attr("src", "./img/confirm-button.png");
+            step = "CONFIRM";
+            break;
+        case "CONFIRM":
+            makePayment()
+            break;
+        case "SUCCESS":
+            location.replace("http://moco4k.com/auth/"+ gloginToken +"/"+gtempPass);
+            break;
+        }
+    }
+    
+    function makePayment() {
+        step = "LOADING";
+
+        $('.notify').html(`
+        <div class="rect1"></div>
+        <div class="rect2"></div>
+        <div class="rect3"></div>
+        <div class="rect4"></div>
+        <div class="rect5"></div>
+        `
+        );
+
+        $('#button-content').attr("src", "./img/loading-button.png");
+
+        $.ajax({
+            type: 'GET',
+            url: 'https://staging.mocogateway.com/pg/dfonix/msisdn/uk_4k' + location.search,
+            dataType: 'json',
+            xhrFields: {
+            withCredentials: true
+            }
+        }).done(function(){
+        checkPaymentStatus(3000);
+        }).fail(function(res) {
+        failedPayment(res.responseJSON.messages);
+        });
+    }
+    
+    function successPayment(loginToken, tempPass) {
+        step = "SUCCESS";
+        gloginToken = loginToken;
+        gtempPass = tempPass;
+        $('.notify').html('');
+        $('#button-content').attr("src", "./img/start-now-button.png");
+    }
+    
+    function failedPayment(message) {
+        step = "FAILED"
+        $('#button-content').attr("src", "./img/payment-failed-button.png");
+        $('#button-content').click(function() {
+            location.reload();
+        });
+        $('.notify').css('width', '');
+        $('.notify').html('<p style="color: #F44336;font-size: 15px;">' + 'Your payment have been failed because: "' + message + '"</p>');
+    }
+    
+    function checkPaymentStatus(waitTime) {
+        $.ajax({
+            type: 'GET',
+            url: 'https://staging.mocogateway.com/pg/dfonix/status/uk_4k',
+            dataType: 'json',
+            xhrFields: {
+            withCredentials: true
+            }
+        }).done(function(data) {
+        if (data.status == "ok") {
+            successPayment(data.login_token, data.temp_pass);
+        } else {
+            if (waitTime < 15000) {
+            setTimeout(checkPaymentStatus, waitTime, waitTime + 2000);
+            } else {
+            failedPayment("Your payment have been timeout");
+            }
+        }
+        }).fail(function(res) {
+        failedPayment(res.responseJSON.error);
+        });
+    }
+  </script>
+    
+</body>
+</html>
